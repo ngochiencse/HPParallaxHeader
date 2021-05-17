@@ -22,3 +22,6 @@ class ViewController: UIViewController {
 
 }
 
+extension UIViewController: UIScrollViewDelegate {
+    scroll
+}
