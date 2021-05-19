@@ -33,10 +33,14 @@ class HPScrollView : UIScrollView {
      */
     @IBOutlet weak var hpDelegate: HPScrollViewDelegate?
     
+    @IBOutlet var parallaxHeader: HPParallaxHeader?
+    
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
-    
+    private var otherKvoTokens: [NSKeyValueObservation] = []
+    private var myKVOToken: NSKeyValueObservation?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
@@ -57,8 +61,10 @@ class HPScrollView : UIScrollView {
         
         panGestureRecognizer.cancelsTouchesInView = false
         
-        addObserver(self, forKeyPath: "contentOffset",
-                    options: [.new, .old], context: nil)
+        myKVOToken = observe(\.contentOffset, options: [.old, .new], changeHandler: {[weak self] scrollView, change in
+            guard let self = self else { return }
+            self.onChangeContentOffset(scrollView, change)
+        })
     }
 
     // MARK: - Properties
@@ -74,6 +80,11 @@ class HPScrollView : UIScrollView {
 //    - (id<MXScrollViewDelegate>)delegate {
 //        return self.forwarder.delegate;
 //    }
+
+    deinit {
+        myKVOToken?.invalidate()
+        removeObservedViews()
+    }
 }
 
 extension HPScrollView: UIGestureRecognizerDelegate {
@@ -119,197 +130,114 @@ extension HPScrollView: UIGestureRecognizerDelegate {
             return false
         }
         
-        let shouldScroll = (hpDelegate?.scrollViewShouldScroll(self, with: scrollView)) ?? tru
+        let shouldScroll = (hpDelegate?.scrollViewShouldScroll(self, with: scrollView)) ?? true
         
         if shouldScroll {
-//            [self addObservedView:scrollView];
+            addObservedView(scrollView)
         }
         
         return shouldScroll
     }
 }
 
-#pragma mark <UIGestureRecognizerDelegate>
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
-    if (otherGestureRecognizer.view == self) {
-        return NO;
-    }
-    
-    // Ignore other gesture than pan
-    if (![gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        return NO;
-    }
-    
-    // Lock horizontal pan gesture.
-    CGPoint velocity = [(UIPanGestureRecognizer*)gestureRecognizer velocityInView:self];
-    if (fabs(velocity.x) > fabs(velocity.y)) {
-        return NO;
-    }
-    
-    UIView *otherView = otherGestureRecognizer.view;
-    // WKWebView on he MXScrollView
-    if ([otherView isKindOfClass:NSClassFromString(@"WKContentView")]) {
-        otherView = otherView.superview;
-    }
-    // Consider scroll view pan only
-    if (![otherView isKindOfClass:[UIScrollView class]]) {
-        return NO;
-    }
-    
-    UIScrollView *scrollView = (id)otherView;
-    
-    // Tricky case: UITableViewWrapperView
-    if ([scrollView.superview isKindOfClass:[UITableView class]]) {
-        return NO;
-    }
-    //tableview on the MXScrollView
-    if ([scrollView.superview isKindOfClass:NSClassFromString(@"UITableViewCellContentView")]) {
-        return NO;
-    }
-    
-    BOOL shouldScroll = YES;
-    if ([self.delegate respondsToSelector:@selector(scrollView:shouldScrollWithSubView:)]) {
-        shouldScroll = [self.delegate scrollView:self shouldScrollWithSubView:scrollView];;
-    }
-    
-    if (shouldScroll) {
-        [self addObservedView:scrollView];
-    }
-    
-    return shouldScroll;
-}
-
-#pragma mark KVO
-
-- (void)addObserverToView:(UIScrollView *)scrollView {
-    _lock = (scrollView.contentOffset.y > -scrollView.contentInset.top);
-    
-    [scrollView addObserver:self
-                 forKeyPath:NSStringFromSelector(@selector(contentOffset))
-                    options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
-                    context:kMXScrollViewKVOContext];
-}
-
-- (void)removeObserverFromView:(UIScrollView *)scrollView {
-    @try {
-        [scrollView removeObserver:self
-                        forKeyPath:NSStringFromSelector(@selector(contentOffset))
-                           context:kMXScrollViewKVOContext];
-    }
-    @catch (NSException *exception) {}
-}
-
-//This is where the magic happens...
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    
-    if (context == kMXScrollViewKVOContext && [keyPath isEqualToString:NSStringFromSelector(@selector(contentOffset))]) {
+// MARK: - KVO
+extension HPScrollView {
+    func addOserver(to scrollView: UIScrollView) -> NSKeyValueObservation {
+        lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
         
-        CGPoint new = [[change objectForKey:NSKeyValueChangeNewKey] CGPointValue];
-        CGPoint old = [[change objectForKey:NSKeyValueChangeOldKey] CGPointValue];
-        CGFloat diff = old.y - new.y;
+        let token = scrollView.observe(\.contentOffset, options: [.old, .new]) {[weak self] scrollView, change in
+            guard let self = self else { return }
+            self.onChangeContentOffset(scrollView, change)
+        }
         
-        if (diff == 0.0 || !_isObserving) return;
+        return token
+    }
+    
+    //This is where the magic happens...
+    func onChangeContentOffset(_ scrollView: UIScrollView, _ change: NSKeyValueObservedChange<CGPoint>) {
+        let new = change.newValue ?? .zero
+        let old = change.oldValue ?? .zero
+        let diff = old.y - new.y
         
-        if (object == self) {
+        if diff == 0.0 || !isObserving {
+            return
+        }
+        
+        if scrollView == self {
             
             //Adjust self scroll offset when scroll down
-            if (diff > 0 && _lock) {
-                [self scrollView:self setContentOffset:old];
-                
-            } else if (self.contentOffset.y < -self.contentInset.top && !self.bounces) {
-                [self scrollView:self setContentOffset:CGPointMake(self.contentOffset.x, -self.contentInset.top)];
-            } else if (self.contentOffset.y > -self.parallaxHeader.minimumHeight) {
-                [self scrollView:self setContentOffset:CGPointMake(self.contentOffset.x, -self.parallaxHeader.minimumHeight)];
+            if (diff > 0 && lock) {
+                self.scrollView(self, setContentOffset: old)
+            } else if self.contentOffset.y < -self.contentInset.top && !self.bounces {
+                self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
+                                                                y: -contentInset.top))
+            } else if self.contentOffset.y > -(self.parallaxHeader?.minimumHeight ?? 0) {
+                self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
+                                                                y: -(parallaxHeader?.minimumHeight ?? 0)))
             }
-            
+
         } else {
             //Adjust the observed scrollview's content offset
-            UIScrollView *scrollView = object;
-            _lock = (scrollView.contentOffset.y > -scrollView.contentInset.top);
+            lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
             
             //Manage scroll up
-            if (self.contentOffset.y < -self.parallaxHeader.minimumHeight && _lock && diff < 0) {
-                [self scrollView:scrollView setContentOffset:old];
+            if contentOffset.y < -(parallaxHeader?.minimumHeight ?? 0) && lock && (diff < 0) {
+                self.scrollView(self, setContentOffset: old)
             }
+            
             //Disable bouncing when scroll down
-            if (!_lock && ((self.contentOffset.y > -self.contentInset.top) || self.bounces)) {
-                [self scrollView:scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, -scrollView.contentInset.top)];
+            if !lock && ((contentOffset.y > -contentInset.top) || bounces) {
+                self.scrollView(scrollView, setContentOffset: CGPoint(x: scrollView.contentOffset.x,
+                                                                      y: -scrollView.contentInset.top))
             }
         }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+
+}
+
+// MARK: - Scrolling views handlers
+extension HPScrollView {
+    func addObservedView(_ scrollView: UIScrollView) {
+        if observedViews.contains(scrollView) == false {
+            observedViews.append(scrollView)
+            let token = addOserver(to: scrollView)
+            otherKvoTokens.append(token)
+        }
+    }
+    
+    func removeObservedViews() {
+        for token in otherKvoTokens {
+            token.invalidate()
+        }
+        otherKvoTokens.removeAll()
+        observedViews.removeAll()
+    }
+
+    func scrollView(_ scrollView: UIScrollView, setContentOffset offset: CGPoint) {
+        isObserving = false
+        scrollView.contentOffset = offset
+        isObserving = true
     }
 }
 
-#pragma mark Scrolling views handlers
 
-- (void)addObservedView:(UIScrollView *)scrollView {
-    if (![self.observedViews containsObject:scrollView]) {
-        [self.observedViews addObject:scrollView];
-        [self addObserverToView:scrollView];
+//@implementation MXScrollViewDelegateForwarder
+//
+//- (BOOL)respondsToSelector:(SEL)selector {
+//    return [self.delegate respondsToSelector:selector] || [super respondsToSelector:selector];
+//}
+//
+//- (void)forwardInvocation:(NSInvocation *)invocation {
+//    [invocation invokeWithTarget:self.delegate];
+//}
+
+// MARK: - <UIScrollViewDelegate>
+extension HPScrollView: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        hpDelegate?.scrollViewDidEndDecelerating?(scrollView)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        hpDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
 }
-
-- (void)removeObservedViews {
-    for (UIScrollView *scrollView in self.observedViews) {
-        [self removeObserverFromView:scrollView];
-    }
-    [self.observedViews removeAllObjects];
-}
-
-- (void)scrollView:(UIScrollView *)scrollView setContentOffset:(CGPoint)offset {
-    _isObserving = NO;
-    scrollView.contentOffset = offset;
-    _isObserving = YES;
-}
-
-- (void)dealloc {
-    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXScrollViewKVOContext];
-    [self removeObservedViews];
-}
-
-#pragma mark <UIScrollViewDelegate>
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    _lock = NO;
-    [self removeObservedViews];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    if (!decelerate) {
-        _lock = NO;
-        [self removeObservedViews];
-    }
-}
-
-@end
-
-@implementation MXScrollViewDelegateForwarder
-
-- (BOOL)respondsToSelector:(SEL)selector {
-    return [self.delegate respondsToSelector:selector] || [super respondsToSelector:selector];
-}
-
-- (void)forwardInvocation:(NSInvocation *)invocation {
-    [invocation invokeWithTarget:self.delegate];
-}
-
-#pragma mark <UIScrollViewDelegate>
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [(MXScrollView *)scrollView scrollViewDidEndDecelerating:scrollView];
-    if ([self.delegate respondsToSelector:_cmd]) {
-        [self.delegate scrollViewDidEndDecelerating:scrollView];
-    }
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    [(MXScrollView *)scrollView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-    if ([self.delegate respondsToSelector:_cmd]) {
-        [self.delegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-    }
-}
-
-@end
