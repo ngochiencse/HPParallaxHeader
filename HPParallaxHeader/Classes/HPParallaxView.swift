@@ -12,39 +12,14 @@ class HPParallaxView: UIView {
     weak var parent: HPParallaxHeader?
     
     override func willMove(toSuperview newSuperview: UIView?) {
-        if newSuperview is UIScrollView {
+        if let scrollView = superview as? HPScrollView {
 //            [self.superview removeObserver:self.parent forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXParallaxHeaderKVOContext];
         }
     }
     
     override func didMoveToSuperview() {
-        if newSuperview is UIScrollView {
+        if let scrollView = superview as? HPScrollView {
 //            [self.superview removeObserver:self.parent forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXParallaxHeaderKVOContext];
         }
     }
 }
-
-@interface MXParallaxView : UIView
-@property (nonatomic,weak) MXParallaxHeader *parent;
-@end
-
-@implementation MXParallaxView
-
-static void * const kMXParallaxHeaderKVOContext = (void*)&kMXParallaxHeaderKVOContext;
-
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    if ([self.superview isKindOfClass:[UIScrollView class]]) {
-        [self.superview removeObserver:self.parent forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXParallaxHeaderKVOContext];
-    }
-}
-
-- (void)didMoveToSuperview{
-    if ([self.superview isKindOfClass:[UIScrollView class]]) {
-        [self.superview addObserver:self.parent
-                         forKeyPath:NSStringFromSelector(@selector(contentOffset))
-                            options:NSKeyValueObservingOptionNew
-                            context:kMXParallaxHeaderKVOContext];
-    }
-}
-
-@end

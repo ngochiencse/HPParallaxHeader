@@ -80,9 +80,13 @@ class HPScrollView : UIScrollView {
 //    - (id<MXScrollViewDelegate>)delegate {
 //        return self.forwarder.delegate;
 //    }
+    
+    func removeSelfObserver() {
+        myKVOToken?.invalidate()
+    }
 
     deinit {
-        myKVOToken?.invalidate()
+        removeSelfObserver()
         removeObservedViews()
     }
 }

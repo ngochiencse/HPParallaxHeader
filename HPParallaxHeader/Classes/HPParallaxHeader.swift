@@ -45,7 +45,20 @@ public class HPParallaxHeader: NSObject {
     /**
      The content view on top of the UIScrollView's content.
      */
-    public let contentView: UIView
+    public var contentView: UIView {
+        if let contentView = _contentView {
+            return contentView
+        }
+        let contentView = HPParallaxView()
+        contentView.parent = self
+        contentView.clipsToBounds = true
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        heightConstraint = contentView.heightAnchor.constraint(equalToConstant: 0)
+        _contentView = contentView
+        return contentView
+    }
+    private var _contentView: UIView?
     
     /**
      Delegate instance that adopt the MXScrollViewDelegate.
@@ -55,22 +68,77 @@ public class HPParallaxHeader: NSObject {
     /**
      The header's view.
      */
-    @IBOutlet public var view: UIView?
-    
+    @IBOutlet public var view: UIView? {
+        get {
+            return _view
+        }
+        set {
+            if (newValue != _view) {
+                _view?.removeFromSuperview()
+                _view = newValue
+
+//                [self updateConstraints];
+
+                contentView.layoutIfNeeded()
+
+                height = contentView.frame.size.height;
+                heightConstraint?.constant = height
+                heightConstraint?.isActive = true
+            }
+
+        }
+    }
+    private var _view: UIView?
+
     /**
      The header's default height. 0 by default.
      */
-    @IBInspectable public var height: CGFloat = 0
+    @IBInspectable public var height: CGFloat = 0 {
+        didSet {
+            if (height != oldValue) {
+
+                //Adjust content inset
+//                [self adjustScrollViewTopInset:self.scrollView.contentInset.top - oldValue + height];
+
+                _height = height;
+
+                heightConstraint?.constant = height
+                heightConstraint?.active = true
+//                [self layoutContentView];
+            }
+        }
+    }
 
     /**
      The header's minimum height while scrolling up. 0 by default.
      */
-    @IBInspectable public var minimumHeight: CGFloat = 0
+    @IBInspectable public var minimumHeight: CGFloat = 0 {
+        didSet {
+//            [self layoutContentView];
+        }
+    }
     
+    /**
+     The parallax header behavior mode.
+     */
+    public var mode: MXParallaxHeaderMode = .topFill {
+        didSet {
+            if (mode != oldValue) {
+//                [self updateConstraints];
+            }
+
+        }
+    }
     /**
      The parallax header progress value.
      */
-    public private(set) var progress: CGFloat = 0
+    public private(set) var progress: CGFloat = 0 {
+        didSet {
+            if (oldValue != progress) {
+                delegate?.parallaxHeaderDidScroll(self)
+            }
+        }
+    }
     
     /**
      Loads a `view` from the nib file in the specified bundle.
@@ -80,7 +148,127 @@ public class HPParallaxHeader: NSObject {
      @param optionsOrNil A dictionary containing the options to use when opening the nib file. For a list of available keys for this dictionary, see NSBundle UIKit Additions.
      */
     public func load(nibName name: String, bundle bundleOrNil: Bundle?, options: [UINib.OptionsKey: Any]) {
-        
+        let nib = UINib(nibName: name, bundle: bundleOrNil)
+        nib.instantiate(withOwner: self, options: options)
     }
+    
+    private weak var scrollView: UIScrollView? {
+        didSet {
+            if oldValue != scrollView {
+                isObserving = true
+            }
+        }
+    }
+    
+    private var positionConstraint: NSLayoutConstraint?
+    private var heightConstraint: NSLayoutConstraint?
+    private var isObserving: Bool = false
+    
+    // MARK: - Constraints
+    func updateConstraints() {
+        guard let view = view else { return }
+        
+        contentView.removeFromSuperview()
+        scrollView?.addSubview(contentView)
+        
+        view.removeFromSuperview()
+        contentView.addSubview(view)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        switch self.mode {
+        case .fill:
+            setFillModeConstraints()
+        case .topFill:
+            setTopFillModeConstraints()
+        case .top:
+            setTopModeConstraints()
+        case .bottom:
+            setBottomModeConstraints()
+        case .center:
+            setCenterModeConstraints()
+        }
+
+        setContentViewConstraints()
+    }
+
+    func setCenterModeConstraints() {
+        view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        view?.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        view?.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+    }
+    
+    func setFillModeConstraints() {
+        view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        view?.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    }
+    
+    func setTopFillModeConstraints() {
+        view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        view?.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+        
+        let constraint = view?.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        constraint?.priority = .defaultHigh
+        constraint?.isActive = true
+    }
+
+    func setTopModeConstraints() {
+        view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        view?.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+    }
+    
+    func setBottomModeConstraints() {
+        view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        view?.heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+
+    func setContentViewConstraints() {
+        guard let scrollView = scrollView else { return }
+        contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        
+        let positionConstraint = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        positionConstraint.isActive = true
+    }
+    
+    // MARK: - Private Methods
+    
+
+    private func layoutContentView() {
+        let minimumHeight = min(minimumHeight, height);
+        let relativeYOffset = (scrollView?.contentOffset.y ?? 0) + (scrollView?.contentInset.top ?? 0) - height
+        let relativeHeight  = -relativeYOffset;
+
+        positionConstraint?.constant = relativeYOffset
+        heightConstraint?.constant = max(relativeHeight, minimumHeight)
+
+        contentView.layoutSubviews()
+
+        let div = height - minimumHeight
+        progress = (contentView.frame.size.height - minimumHeight) / (div != 0 ? div : height)
+    }
+    
+    private func adjustScrollViewTopInset(_ top: CGFloat) {
+        var inset = scrollView?.contentInset ?? .zero
+
+        //Adjust content offset
+        var offset = scrollView?.contentOffset ?? .zero
+        offset.y += inset.top - top
+        scrollView?.contentOffset = offset
+
+        //Adjust content inset
+        inset.top = top
+        scrollView?.contentInset = inset
+    }
+
 }
 
