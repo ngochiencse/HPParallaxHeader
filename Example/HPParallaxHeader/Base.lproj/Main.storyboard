@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scroll View Example-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="MXScrollViewExample" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -20,11 +20,88 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhe-wS-9G4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3W-uh-FBl" customClass="HPScrollView" customModule="HPParallaxHeader">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rJ-Jr-IRy">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EJj-t3-WmM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="181.5" height="667"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="BIL-jz-8MW"/>
+                                                        </connections>
+                                                    </tableView>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pWC-8a-N2Z">
+                                                        <rect key="frame" x="181.5" y="0.0" width="193.5" height="667"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="BEo-ym-lbt"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="EJj-t3-WmM" secondAttribute="bottom" id="IDn-Gt-AnB"/>
+                                                    <constraint firstItem="pWC-8a-N2Z" firstAttribute="width" secondItem="EJj-t3-WmM" secondAttribute="width" multiplier="1.06452" id="OEo-lw-hal"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pWC-8a-N2Z" secondAttribute="bottom" id="aTX-sU-p5X"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pWC-8a-N2Z" secondAttribute="trailing" id="eVs-rq-uar"/>
+                                                    <constraint firstItem="pWC-8a-N2Z" firstAttribute="top" secondItem="5rJ-Jr-IRy" secondAttribute="top" id="g1s-4b-guR"/>
+                                                    <constraint firstItem="pWC-8a-N2Z" firstAttribute="leading" secondItem="EJj-t3-WmM" secondAttribute="trailing" id="jEL-eW-i21"/>
+                                                    <constraint firstItem="EJj-t3-WmM" firstAttribute="top" secondItem="5rJ-Jr-IRy" secondAttribute="top" id="lNa-vN-885"/>
+                                                    <constraint firstItem="EJj-t3-WmM" firstAttribute="leading" secondItem="5rJ-Jr-IRy" secondAttribute="leading" id="wrn-Eo-iL5"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5rJ-Jr-IRy" firstAttribute="centerX" secondItem="B3W-uh-FBl" secondAttribute="centerX" id="3aN-iw-XH1"/>
+                                            <constraint firstItem="5rJ-Jr-IRy" firstAttribute="centerY" secondItem="B3W-uh-FBl" secondAttribute="centerY" id="MLf-n0-Ike"/>
+                                            <constraint firstItem="5rJ-Jr-IRy" firstAttribute="leading" secondItem="B3W-uh-FBl" secondAttribute="leading" id="PeH-XR-1uU"/>
+                                            <constraint firstAttribute="bottom" secondItem="5rJ-Jr-IRy" secondAttribute="bottom" id="dIf-SV-12m"/>
+                                            <constraint firstItem="5rJ-Jr-IRy" firstAttribute="top" secondItem="B3W-uh-FBl" secondAttribute="top" id="ejU-lO-4ZK"/>
+                                            <constraint firstAttribute="trailing" secondItem="5rJ-Jr-IRy" secondAttribute="trailing" id="eyf-0N-vv4"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="q82-wO-T9j"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="i49-gM-HaU"/>
+                                    </scrollView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="BYX-1j-Zti"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="BYX-1j-Zti" firstAttribute="bottom" secondItem="B3W-uh-FBl" secondAttribute="bottom" id="AM0-Te-xYt"/>
+                                    <constraint firstItem="B3W-uh-FBl" firstAttribute="leading" secondItem="bhe-wS-9G4" secondAttribute="leading" id="Jw7-DO-8be"/>
+                                    <constraint firstItem="B3W-uh-FBl" firstAttribute="top" secondItem="bhe-wS-9G4" secondAttribute="top" id="Xpb-Ye-VRD"/>
+                                    <constraint firstItem="BYX-1j-Zti" firstAttribute="trailing" secondItem="B3W-uh-FBl" secondAttribute="trailing" id="dNm-7F-dlQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bhe-wS-9G4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CC2-pq-xqk"/>
+                            <constraint firstAttribute="bottom" secondItem="bhe-wS-9G4" secondAttribute="bottom" id="EkT-V1-AR2"/>
+                            <constraint firstItem="bhe-wS-9G4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="efL-fI-4YG"/>
+                            <constraint firstAttribute="trailing" secondItem="bhe-wS-9G4" secondAttribute="trailing" id="gba-xc-x0r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="B3W-uh-FBl" id="xMU-rP-C4g"/>
+                        <outlet property="table1" destination="EJj-t3-WmM" id="6nH-G5-gcu"/>
+                        <outlet property="table2" destination="pWC-8a-N2Z" id="2gl-78-vZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135" y="112"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

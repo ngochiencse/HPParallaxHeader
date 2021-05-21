@@ -13,13 +13,13 @@ class HPParallaxView: UIView {
     
     override func willMove(toSuperview newSuperview: UIView?) {
         if let scrollView = superview as? HPScrollView {
-//            [self.superview removeObserver:self.parent forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXParallaxHeaderKVOContext];
+            parent?.removeObserveContentOffset()
         }
     }
     
     override func didMoveToSuperview() {
         if let scrollView = superview as? HPScrollView {
-//            [self.superview removeObserver:self.parent forKeyPath:NSStringFromSelector(@selector(contentOffset)) context:kMXParallaxHeaderKVOContext];
+            parent?.addObserveContentOffset(scrollView)
         }
     }
 }

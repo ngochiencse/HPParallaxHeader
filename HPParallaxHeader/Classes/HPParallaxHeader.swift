@@ -77,7 +77,7 @@ public class HPParallaxHeader: NSObject {
                 _view?.removeFromSuperview()
                 _view = newValue
 
-//                [self updateConstraints];
+                updateConstraints()
 
                 contentView.layoutIfNeeded()
 
@@ -98,13 +98,11 @@ public class HPParallaxHeader: NSObject {
             if (height != oldValue) {
 
                 //Adjust content inset
-//                [self adjustScrollViewTopInset:self.scrollView.contentInset.top - oldValue + height];
-
-                _height = height;
+                adjustScrollViewTopInset((scrollView?.contentInset.top ?? 0) - oldValue + height)
 
                 heightConstraint?.constant = height
-                heightConstraint?.active = true
-//                [self layoutContentView];
+                heightConstraint?.isActive = true
+                layoutContentView()
             }
         }
     }
@@ -114,7 +112,7 @@ public class HPParallaxHeader: NSObject {
      */
     @IBInspectable public var minimumHeight: CGFloat = 0 {
         didSet {
-//            [self layoutContentView];
+            layoutContentView()
         }
     }
     
@@ -124,7 +122,7 @@ public class HPParallaxHeader: NSObject {
     public var mode: MXParallaxHeaderMode = .topFill {
         didSet {
             if (mode != oldValue) {
-//                [self updateConstraints];
+                updateConstraints()
             }
 
         }
@@ -269,6 +267,23 @@ public class HPParallaxHeader: NSObject {
         inset.top = top
         scrollView?.contentInset = inset
     }
-
+    
+    // MARK: - KVO
+    var kvoToken: NSKeyValueObservation?
+    func addObserveContentOffset(_ scrollView: UIScrollView) {
+        guard kvoToken != nil else { return }
+        kvoToken = scrollView.observe(\.contentOffset) { [weak self] _, _ in
+            guard let self = self else { return }
+            self.onChangeContentOffset()
+        }
+    }
+    
+    func onChangeContentOffset() {
+        layoutContentView()
+    }
+    
+    func removeObserveContentOffset() {
+        kvoToken?.invalidate()
+    }
 }
 

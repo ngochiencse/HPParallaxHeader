@@ -11,7 +11,7 @@ import UIKit
 /**
  The delegate of a MXScrollView object may adopt the MXScrollViewDelegate protocol to control subview's scrolling effect.
  */
-@objc protocol HPScrollViewDelegate: UIScrollViewDelegate {
+@objc public protocol HPScrollViewDelegate: UIScrollViewDelegate {
     /**
      Asks the page if the scrollview should scroll with the subview.
      
@@ -26,14 +26,14 @@ import UIKit
 /**
  The MXScrollView is a UIScrollView subclass with the ability to hook the vertical scroll from its subviews.
  */
-class HPScrollView : UIScrollView {
+public class HPScrollView : UIScrollView {
     
     /**
      Delegate instance that adopt the MXScrollViewDelegate.
      */
-    @IBOutlet weak var hpDelegate: HPScrollViewDelegate?
+    @IBOutlet public weak var hpDelegate: HPScrollViewDelegate?
     
-    @IBOutlet var parallaxHeader: HPParallaxHeader?
+    public var parallaxHeader: HPParallaxHeader = HPParallaxHeader()
     
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
@@ -175,9 +175,9 @@ extension HPScrollView {
             } else if self.contentOffset.y < -self.contentInset.top && !self.bounces {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
                                                                 y: -contentInset.top))
-            } else if self.contentOffset.y > -(self.parallaxHeader?.minimumHeight ?? 0) {
+            } else if self.contentOffset.y > -(self.parallaxHeader.minimumHeight ?? 0) {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
-                                                                y: -(parallaxHeader?.minimumHeight ?? 0)))
+                                                                y: -(parallaxHeader.minimumHeight ?? 0)))
             }
 
         } else {
@@ -185,7 +185,7 @@ extension HPScrollView {
             lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
             
             //Manage scroll up
-            if contentOffset.y < -(parallaxHeader?.minimumHeight ?? 0) && lock && (diff < 0) {
+            if contentOffset.y < -(parallaxHeader.minimumHeight ?? 0) && lock && (diff < 0) {
                 self.scrollView(self, setContentOffset: old)
             }
             
@@ -237,11 +237,11 @@ extension HPScrollView {
 
 // MARK: - <UIScrollViewDelegate>
 extension HPScrollView: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         hpDelegate?.scrollViewDidEndDecelerating?(scrollView)
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         hpDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
 }
