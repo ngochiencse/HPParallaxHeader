@@ -16,7 +16,7 @@ class HPParallaxView: UIView {
     }
     
     override func didMoveToSuperview() {
-        if let scrollView = superview as? HPScrollView {
+        if let scrollView = superview as? UIScrollView {
             parent?.addObserveContentOffset(scrollView)
         }
     }

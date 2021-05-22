@@ -33,11 +33,6 @@ public class HPScrollView : UIScrollView {
      */
     @IBOutlet public weak var hpDelegate: HPScrollViewDelegate?
     
-    public var parallaxHeader: HPParallaxHeader {
-        didSet {
-            parallaxHeader.scrollView = self
-        }
-    }
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
@@ -45,13 +40,11 @@ public class HPScrollView : UIScrollView {
     private var myKVOToken: NSKeyValueObservation?
 
     override init(frame: CGRect) {
-        parallaxHeader = HPParallaxHeader()
         super.init(frame: frame)
         initialize()
     }
     
     required init?(coder: NSCoder) {
-        parallaxHeader = HPParallaxHeader()
         super.init(coder: coder)
         initialize()
     }
@@ -59,7 +52,6 @@ public class HPScrollView : UIScrollView {
     func initialize() {
         //            self.forwarder = [MXScrollViewDelegateForwarder new];
         //            super.delegate = self.forwarder;
-        parallaxHeader.scrollView = self
         
         showsVerticalScrollIndicator = false
         isDirectionalLockEnabled = true
