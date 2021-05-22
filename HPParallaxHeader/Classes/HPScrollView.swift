@@ -33,8 +33,11 @@ public class HPScrollView : UIScrollView {
      */
     @IBOutlet public weak var hpDelegate: HPScrollViewDelegate?
     
-    public var parallaxHeader: HPParallaxHeader = HPParallaxHeader()
-    
+    public var parallaxHeader: HPParallaxHeader {
+        didSet {
+            parallaxHeader.scrollView = self
+        }
+    }
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
@@ -42,11 +45,13 @@ public class HPScrollView : UIScrollView {
     private var myKVOToken: NSKeyValueObservation?
 
     override init(frame: CGRect) {
+        parallaxHeader = HPParallaxHeader()
         super.init(frame: frame)
         initialize()
     }
     
     required init?(coder: NSCoder) {
+        parallaxHeader = HPParallaxHeader()
         super.init(coder: coder)
         initialize()
     }
@@ -54,6 +59,7 @@ public class HPScrollView : UIScrollView {
     func initialize() {
         //            self.forwarder = [MXScrollViewDelegateForwarder new];
         //            super.delegate = self.forwarder;
+        parallaxHeader.scrollView = self
         
         showsVerticalScrollIndicator = false
         isDirectionalLockEnabled = true
@@ -92,8 +98,8 @@ public class HPScrollView : UIScrollView {
 }
 
 extension HPScrollView: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
-                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                                  shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if (otherGestureRecognizer.view == self) {
             return false
         }
@@ -159,34 +165,36 @@ extension HPScrollView {
     
     //This is where the magic happens...
     func onChangeContentOffset(_ scrollView: UIScrollView, _ change: NSKeyValueObservedChange<CGPoint>) {
-        let new = change.newValue ?? .zero
-        let old = change.oldValue ?? .zero
+        guard let new = change.newValue else { return }
+        guard let old = change.oldValue else { return }
         let diff = old.y - new.y
         
         if diff == 0.0 || !isObserving {
             return
         }
-        
+
         if scrollView == self {
             
             //Adjust self scroll offset when scroll down
             if (diff > 0 && lock) {
                 self.scrollView(self, setContentOffset: old)
-            } else if self.contentOffset.y < -self.contentInset.top && !self.bounces {
+            } else if contentOffset.y < -contentInset.top && !bounces {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
                                                                 y: -contentInset.top))
-            } else if self.contentOffset.y > -(self.parallaxHeader.minimumHeight ?? 0) {
+            } else if contentOffset.y > -parallaxHeader.minimumHeight {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
-                                                                y: -(parallaxHeader.minimumHeight ?? 0)))
+                                                                y: -parallaxHeader.minimumHeight))
             }
 
         } else {
+            print("\(new) - \(old)")
+            
             //Adjust the observed scrollview's content offset
             lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
             
             //Manage scroll up
-            if contentOffset.y < -(parallaxHeader.minimumHeight ?? 0) && lock && (diff < 0) {
-                self.scrollView(self, setContentOffset: old)
+            if (contentOffset.y < -parallaxHeader.minimumHeight) && lock && (diff < 0) {
+                self.scrollView(scrollView, setContentOffset: old)
             }
             
             //Disable bouncing when scroll down

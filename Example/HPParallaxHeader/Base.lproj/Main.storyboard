@@ -73,10 +73,10 @@
                                 <viewLayoutGuide key="safeArea" id="BYX-1j-Zti"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="BYX-1j-Zti" firstAttribute="bottom" secondItem="B3W-uh-FBl" secondAttribute="bottom" id="AM0-Te-xYt"/>
+                                    <constraint firstAttribute="bottom" secondItem="B3W-uh-FBl" secondAttribute="bottom" id="AM0-Te-xYt"/>
                                     <constraint firstItem="B3W-uh-FBl" firstAttribute="leading" secondItem="bhe-wS-9G4" secondAttribute="leading" id="Jw7-DO-8be"/>
                                     <constraint firstItem="B3W-uh-FBl" firstAttribute="top" secondItem="bhe-wS-9G4" secondAttribute="top" id="Xpb-Ye-VRD"/>
-                                    <constraint firstItem="BYX-1j-Zti" firstAttribute="trailing" secondItem="B3W-uh-FBl" secondAttribute="trailing" id="dNm-7F-dlQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="B3W-uh-FBl" secondAttribute="trailing" id="dNm-7F-dlQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -84,7 +84,7 @@
                         <constraints>
                             <constraint firstItem="bhe-wS-9G4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CC2-pq-xqk"/>
                             <constraint firstAttribute="bottom" secondItem="bhe-wS-9G4" secondAttribute="bottom" id="EkT-V1-AR2"/>
-                            <constraint firstItem="bhe-wS-9G4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="efL-fI-4YG"/>
+                            <constraint firstItem="bhe-wS-9G4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="efL-fI-4YG"/>
                             <constraint firstAttribute="trailing" secondItem="bhe-wS-9G4" secondAttribute="trailing" id="gba-xc-x0r"/>
                         </constraints>
                     </view>

@@ -12,9 +12,7 @@ class HPParallaxView: UIView {
     weak var parent: HPParallaxHeader?
     
     override func willMove(toSuperview newSuperview: UIView?) {
-        if let scrollView = superview as? HPScrollView {
-            parent?.removeObserveContentOffset()
-        }
+        parent?.removeObserveContentOffset()
     }
     
     override func didMoveToSuperview() {

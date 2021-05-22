@@ -119,7 +119,7 @@ public class HPParallaxHeader: NSObject {
     /**
      The parallax header behavior mode.
      */
-    public var mode: MXParallaxHeaderMode = .topFill {
+    public var mode: MXParallaxHeaderMode = .fill {
         didSet {
             if (mode != oldValue) {
                 updateConstraints()
@@ -150,7 +150,7 @@ public class HPParallaxHeader: NSObject {
         nib.instantiate(withOwner: self, options: options)
     }
     
-    private weak var scrollView: UIScrollView? {
+    weak var scrollView: UIScrollView? {
         didSet {
             if oldValue != scrollView {
                 isObserving = true
@@ -234,8 +234,8 @@ public class HPParallaxHeader: NSObject {
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         
-        let positionConstraint = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
-        positionConstraint.isActive = true
+        positionConstraint = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        positionConstraint?.isActive = true
     }
     
     // MARK: - Private Methods
@@ -251,6 +251,8 @@ public class HPParallaxHeader: NSObject {
 
         contentView.layoutSubviews()
 
+//        print("\(heightConstraint?.constant) - \(relativeHeight) - \(minimumHeight)")
+        
         let div = height - minimumHeight
         progress = (contentView.frame.size.height - minimumHeight) / (div != 0 ? div : height)
     }
@@ -271,7 +273,7 @@ public class HPParallaxHeader: NSObject {
     // MARK: - KVO
     var kvoToken: NSKeyValueObservation?
     func addObserveContentOffset(_ scrollView: UIScrollView) {
-        guard kvoToken != nil else { return }
+        guard kvoToken == nil else { return }
         kvoToken = scrollView.observe(\.contentOffset) { [weak self] _, _ in
             guard let self = self else { return }
             self.onChangeContentOffset()
