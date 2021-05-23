@@ -110,7 +110,7 @@ public class HPParallaxHeader: NSObject {
     /**
      The header's minimum height while scrolling up. 0 by default.
      */
-    @IBInspectable public var minimumHeight: CGFloat = 0 {
+    @IBInspectable @objc public dynamic var minimumHeight: CGFloat = 0 {
         didSet {
             layoutContentView()
         }

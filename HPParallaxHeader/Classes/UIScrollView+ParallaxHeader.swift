@@ -10,15 +10,20 @@ import UIKit
 
 private var parallaxHeaderKey: UInt8 = 0
 public extension UIScrollView {
-    @IBOutlet var parallaxHeader: HPParallaxHeader! { // cat is *effectively* a stored property
+    @IBOutlet var parallaxHeader: HPParallaxHeader! {
         get {
-            return associatedObject(base: self, key: &parallaxHeaderKey)
-                {
-                let parallaxHeader = HPParallaxHeader()
-                parallaxHeader.scrollView = self
-                return parallaxHeader
-            } // Set the initial value of the var
+            let value = objc_getAssociatedObject(self, &parallaxHeaderKey) as? HPParallaxHeader;
+            if let unwrapped = value {
+                return unwrapped
+            } else {
+                let newValue = HPParallaxHeader()
+                self.parallaxHeader = newValue
+                return newValue
+            }
         }
-        set { associateObject(base: self, key: &parallaxHeaderKey, value: newValue) }
+        set {
+            newValue.scrollView = self
+            objc_setAssociatedObject(self, &parallaxHeaderKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
 }

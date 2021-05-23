@@ -86,7 +86,7 @@
         <!--MXScrollViewController-->
         <scene sceneID="cGa-Dy-CoM">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="wpI-o5-ONu" customClass="MXScrollViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="wpI-o5-ONu" customClass="HPScrollViewController" customModule="HPParallaxHeader" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jJk-lh-dPo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,8 +100,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="c12-C7-n3f" kind="custom" identifier="parallax_header" customClass="MXParallaxHeaderSegue" id="Pkl-K9-cLA"/>
-                        <segue destination="erx-Ha-mfa" kind="custom" identifier="content" customClass="MXScrollViewControllerSegue" id="ITc-07-Tb9"/>
+                        <segue destination="c12-C7-n3f" kind="custom" identifier="parallax_header" customClass="HPParallaxHeaderSegue" customModule="HPParallaxHeader" id="Pkl-K9-cLA"/>
+                        <segue destination="erx-Ha-mfa" kind="custom" identifier="content" customClass="HPScrollViewControllerSegue" customModule="HPParallaxHeader" id="ITc-07-Tb9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BIQ-29-SGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,6 +232,7 @@
                     <connections>
                         <segue destination="5wP-tC-L4h" kind="relationship" relationship="viewControllers" id="HqE-lM-10O"/>
                         <segue destination="ft2-aT-thd" kind="relationship" relationship="viewControllers" id="6vL-q3-PfQ"/>
+                        <segue destination="wpI-o5-ONu" kind="relationship" relationship="viewControllers" id="QSg-nE-W6E"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXF-fP-svW" userLabel="First Responder" sceneMemberID="firstResponder"/>
