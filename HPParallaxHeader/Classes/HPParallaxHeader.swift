@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public enum MXParallaxHeaderMode {
+public enum HPParallaxHeaderMode {
     /**
      The option to scale the content to fill the size of the header. Some portion of the content may be clipped to fill the header’s bounds.
      */
@@ -119,7 +119,7 @@ public class HPParallaxHeader: NSObject {
     /**
      The parallax header behavior mode.
      */
-    public var mode: MXParallaxHeaderMode = .fill {
+    public var mode: HPParallaxHeaderMode = .fill {
         didSet {
             if (mode != oldValue) {
                 updateConstraints()
