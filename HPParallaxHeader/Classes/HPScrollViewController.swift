@@ -24,22 +24,22 @@ public class HPScrollViewController: UIViewController {
     public var headerViewController: UIViewController? {
         didSet {
             if (oldValue?.parent == self) {
-                oldValue?.willMove(toParentViewController: nil)
+                oldValue?.willMove(toParent: nil)
                 oldValue?.view.removeFromSuperview()
-                oldValue?.removeFromParentViewController()
-                oldValue?.didMove(toParentViewController: nil)
+                oldValue?.removeFromParent()
+                oldValue?.didMove(toParent: nil)
             }
 
             if let headerViewController = headerViewController {
-                headerViewController.willMove(toParentViewController: self)
-                addChildViewController(headerViewController)
+                headerViewController.willMove(toParent: self)
+                addChild(headerViewController)
 
                 //Set parallaxHeader view
                 objc_setAssociatedObject(headerViewController, &parallaxHeaderKey,
                                          scrollView.parallaxHeader, .OBJC_ASSOCIATION_RETAIN)
 
                 scrollView.parallaxHeader.view = headerViewController.view
-                headerViewController.didMove(toParentViewController: self)
+                headerViewController.didMove(toParent: self)
             }
         }
     }
@@ -50,15 +50,15 @@ public class HPScrollViewController: UIViewController {
     public var childViewController: UIViewController? {
         didSet {
             if oldValue?.parent == self {
-                oldValue?.willMove(toParentViewController: nil)
+                oldValue?.willMove(toParent: nil)
                 oldValue?.view.removeFromSuperview()
-                oldValue?.removeFromParentViewController()
-                oldValue?.didMove(toParentViewController: nil)
+                oldValue?.removeFromParent()
+                oldValue?.didMove(toParent: nil)
             }
 
             if let childViewController = childViewController {
-                childViewController.willMove(toParentViewController: self)
-                addChildViewController(childViewController)
+                childViewController.willMove(toParent: self)
+                addChild(childViewController)
 
                 // Set UIViewController's parallaxHeader property
                 objc_setAssociatedObject(childViewController, &parallaxHeaderKey,
@@ -80,7 +80,7 @@ public class HPScrollViewController: UIViewController {
                     .constraint(equalTo: scrollView.heightAnchor, constant: -headerMinimumHeight)
                 childHeightConstraint?.isActive = true
 
-                childViewController.didMove(toParentViewController: self)
+                childViewController.didMove(toParent: self)
             }
         }
     }
