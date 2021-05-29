@@ -14,7 +14,7 @@ class ParchmentExampleViewController: UIViewController {
 
     @IBOutlet weak var pagingContainer: UIView!
     @IBOutlet weak var scrollView: HPScrollView!
-
+    var viewControllers: [TableViewController] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,11 +23,11 @@ class ParchmentExampleViewController: UIViewController {
         scrollView.parallaxHeader.height = 300
         scrollView.parallaxHeader.mode = .fill
 
-        let viewControllers = [
-            TableViewController(),
-            TableViewController(),
-            TableViewController(),
-            TableViewController(),
+        viewControllers = [
+            TableViewController(count: 500),
+            TableViewController(count: 1),
+            TableViewController(count: 10),
+            TableViewController(count: 20),
         ]
         for index in 0..<viewControllers.count {
             viewControllers[index].title = String(index)
@@ -47,6 +47,11 @@ class ParchmentExampleViewController: UIViewController {
         super.viewDidAppear(animated)
         
         scrollView.parallaxHeader.minimumHeight = view.safeAreaInsets.top
+        viewControllers.forEach { viewController in
+            viewController.contentInset = UIEdgeInsets(top: 0, left: 0,
+                                                       bottom: scrollView.parallaxHeader.minimumHeight,
+                                                       right: 0)
+        }
     }
 
     /*
@@ -58,5 +63,4 @@ class ParchmentExampleViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
