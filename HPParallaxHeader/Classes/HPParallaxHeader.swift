@@ -233,6 +233,7 @@ public class HPParallaxHeader: NSObject {
         guard let scrollView = scrollView else { return }
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
         
         positionConstraint = contentView.topAnchor.constraint(equalTo: scrollView.topAnchor)
         positionConstraint?.isActive = true
