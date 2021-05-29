@@ -108,6 +108,53 @@
             </objects>
             <point key="canvasLocation" x="507" y="986"/>
         </scene>
+        <!--Parchment Example-->
+        <scene sceneID="c8D-xq-q36">
+            <objects>
+                <viewController title="Parchment Example" id="ar7-oN-5jU" customClass="ParchmentExampleViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XeU-XS-oAI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJ0-6P-ezx" customClass="HPScrollView" customModule="HPParallaxHeader">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWD-tB-91O">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MWD-tB-91O" secondAttribute="trailing" id="8ne-Gd-TQV"/>
+                                    <constraint firstItem="MWD-tB-91O" firstAttribute="centerY" secondItem="VJ0-6P-ezx" secondAttribute="centerY" id="R81-Ae-bq1"/>
+                                    <constraint firstItem="MWD-tB-91O" firstAttribute="centerX" secondItem="VJ0-6P-ezx" secondAttribute="centerX" id="Rts-lL-bqu"/>
+                                    <constraint firstItem="MWD-tB-91O" firstAttribute="top" secondItem="VJ0-6P-ezx" secondAttribute="top" id="b5L-s2-OkJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="MWD-tB-91O" secondAttribute="bottom" id="vaR-TX-bMW"/>
+                                    <constraint firstItem="MWD-tB-91O" firstAttribute="leading" secondItem="VJ0-6P-ezx" secondAttribute="leading" id="zLz-X1-Dot"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="C8u-VL-D3I"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="tpb-kJ-PF9"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qcB-Dz-ACD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="VJ0-6P-ezx" secondAttribute="bottom" id="Biw-7N-FQi"/>
+                            <constraint firstItem="VJ0-6P-ezx" firstAttribute="top" secondItem="XeU-XS-oAI" secondAttribute="top" id="OAG-b2-yI4"/>
+                            <constraint firstItem="qcB-Dz-ACD" firstAttribute="trailing" secondItem="VJ0-6P-ezx" secondAttribute="trailing" id="uEQ-h2-Jzr"/>
+                            <constraint firstItem="VJ0-6P-ezx" firstAttribute="leading" secondItem="XeU-XS-oAI" secondAttribute="leading" id="ueB-XP-Mgs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Parchment" id="uSS-Mk-Oet"/>
+                    <connections>
+                        <outlet property="pagingContainer" destination="MWD-tB-91O" id="sG3-B6-5j8"/>
+                        <outlet property="scrollView" destination="VJ0-6P-ezx" id="etW-fS-rNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VLq-ka-F58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="1650"/>
+        </scene>
         <!--MXScrollView-->
         <scene sceneID="Wus-Wb-PlD">
             <objects>
@@ -233,6 +280,7 @@
                         <segue destination="5wP-tC-L4h" kind="relationship" relationship="viewControllers" id="HqE-lM-10O"/>
                         <segue destination="ft2-aT-thd" kind="relationship" relationship="viewControllers" id="6vL-q3-PfQ"/>
                         <segue destination="wpI-o5-ONu" kind="relationship" relationship="viewControllers" id="QSg-nE-W6E"/>
+                        <segue destination="ar7-oN-5jU" kind="relationship" relationship="viewControllers" id="r9y-71-iGZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXF-fP-svW" userLabel="First Responder" sceneMemberID="firstResponder"/>
