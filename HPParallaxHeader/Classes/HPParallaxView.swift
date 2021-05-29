@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class HPParallaxView: UIView {
-    static var KVOContext = "kDMParallaxViewKVOContext"
+    static var KVOContext = "kHPParallaxViewKVOContext"
     
     weak var parent: HPParallaxHeader?
     

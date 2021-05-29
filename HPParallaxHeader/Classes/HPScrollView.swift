@@ -27,7 +27,7 @@ import UIKit
  The MXScrollView is a UIScrollView subclass with the ability to hook the vertical scroll from its subviews.
  */
 public class HPScrollView : UIScrollView {
-    static var KVOContext = "kDMScrollViewKVOContext"
+    static var KVOContext = "kHPScrollViewKVOContext"
 
     /**
      Delegate instance that adopt the MXScrollViewDelegate.
