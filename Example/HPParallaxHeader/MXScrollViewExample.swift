@@ -62,7 +62,6 @@ class MXScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - Scroll view delegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let scrollView = scrollView as? HPScrollView else { return }
         NSLog("progress %f", scrollView.parallaxHeader.progress ?? 0)
     }
 }

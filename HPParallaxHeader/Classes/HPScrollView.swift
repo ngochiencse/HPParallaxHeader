@@ -32,8 +32,18 @@ public class HPScrollView : UIScrollView {
     /**
      Delegate instance that adopt the MXScrollViewDelegate.
      */
-    @IBOutlet public weak var hpDelegate: HPScrollViewDelegate?
+    var forwarder: HPScrollViewDelegateForwarder!
     
+    /// - Warning: This value **must** be set as a `DMScrollViewDelegate`.
+    override open var delegate: UIScrollViewDelegate? {
+        get { return forwarder.delegate }
+        set {
+            forwarder.delegate = newValue as? HPScrollViewDelegate
+            super.delegate = nil
+            super.delegate = forwarder
+        }
+    }
+
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
@@ -49,37 +59,16 @@ public class HPScrollView : UIScrollView {
     }
     
     func initialize() {
-        //            self.forwarder = [MXScrollViewDelegateForwarder new];
-        //            super.delegate = self.forwarder;
-        
+        forwarder = HPScrollViewDelegateForwarder(scrollView: self)
+        super.delegate = forwarder
         showsVerticalScrollIndicator = false
         isDirectionalLockEnabled = true
         bounces = true
-        
         panGestureRecognizer.cancelsTouchesInView = false
-        
         addObserver(self, forKeyPath: #keyPath(UIScrollView.contentOffset),
                     options:[.new, .old], context: &HPScrollView.KVOContext)
-
-//        myKVOToken = observe(\.contentOffset, options: [.old, .new], changeHandler: {[weak self] scrollView, change in
-//            guard let self = self else { return }
-//            self.onChangeContentOffset(scrollView, change)
-//        })
+        isObserving = true
     }
-
-    // MARK: - Properties
-
-//    - (void)setDelegate:(id<MXScrollViewDelegate>)delegate {
-//        self.forwarder.delegate = delegate;
-//        // Scroll view delegate caches whether the delegate responds to some of the delegate
-//        // methods, so we need to force it to re-evaluate if the delegate responds to them
-//        super.delegate = nil;
-//        super.delegate = self.forwarder;
-//    }
-//
-//    - (id<MXScrollViewDelegate>)delegate {
-//        return self.forwarder.delegate;
-//    }
 
     deinit {
         removeObserver(self, forKeyPath: #keyPath(contentOffset), context: &HPScrollView.KVOContext)
@@ -130,7 +119,7 @@ extension HPScrollView: UIGestureRecognizerDelegate {
             return false
         }
         
-        let shouldScroll = (hpDelegate?.scrollViewShouldScroll(self, with: scrollView)) ?? true
+        let shouldScroll = forwarder.scrollViewShouldScroll(self, with: scrollView)
         
         if shouldScroll {
             addObservedView(scrollView)
@@ -190,9 +179,7 @@ extension HPScrollView {
                                                                 y: -parallaxHeader.minimumHeight))
             }
 
-        } else {
-            print("\(new) - \(old)")
-            
+        } else {            
             //Adjust the observed scrollview's content offset
             lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
             
@@ -245,10 +232,10 @@ extension HPScrollView {
 // MARK: - <UIScrollViewDelegate>
 extension HPScrollView: UIScrollViewDelegate {
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        hpDelegate?.scrollViewDidEndDecelerating?(scrollView)
+        delegate?.scrollViewDidEndDecelerating?(scrollView)
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        hpDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
+        delegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
 }

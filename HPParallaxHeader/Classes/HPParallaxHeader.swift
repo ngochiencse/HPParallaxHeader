@@ -250,8 +250,6 @@ public class HPParallaxHeader: NSObject {
         heightConstraint?.constant = max(relativeHeight, minimumHeight)
 
         contentView.layoutSubviews()
-
-//        print("\(heightConstraint?.constant) - \(relativeHeight) - \(minimumHeight)")
         
         let div = height - minimumHeight
         progress = (contentView.frame.size.height - minimumHeight) / (div != 0 ? div : height)
