@@ -27,7 +27,8 @@ import UIKit
  The MXScrollView is a UIScrollView subclass with the ability to hook the vertical scroll from its subviews.
  */
 public class HPScrollView : UIScrollView {
-    
+    static var KVOContext = "kDMScrollViewKVOContext"
+
     /**
      Delegate instance that adopt the MXScrollViewDelegate.
      */
@@ -36,8 +37,6 @@ public class HPScrollView : UIScrollView {
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
-    private var otherKvoTokens: [NSKeyValueObservation] = []
-    private var myKVOToken: NSKeyValueObservation?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,10 +58,13 @@ public class HPScrollView : UIScrollView {
         
         panGestureRecognizer.cancelsTouchesInView = false
         
-        myKVOToken = observe(\.contentOffset, options: [.old, .new], changeHandler: {[weak self] scrollView, change in
-            guard let self = self else { return }
-            self.onChangeContentOffset(scrollView, change)
-        })
+        addObserver(self, forKeyPath: #keyPath(UIScrollView.contentOffset),
+                    options:[.new, .old], context: &HPScrollView.KVOContext)
+
+//        myKVOToken = observe(\.contentOffset, options: [.old, .new], changeHandler: {[weak self] scrollView, change in
+//            guard let self = self else { return }
+//            self.onChangeContentOffset(scrollView, change)
+//        })
     }
 
     // MARK: - Properties
@@ -78,13 +80,9 @@ public class HPScrollView : UIScrollView {
 //    - (id<MXScrollViewDelegate>)delegate {
 //        return self.forwarder.delegate;
 //    }
-    
-    func removeSelfObserver() {
-        myKVOToken?.invalidate()
-    }
 
     deinit {
-        removeSelfObserver()
+        removeObserver(self, forKeyPath: #keyPath(contentOffset), context: &HPScrollView.KVOContext)
         removeObservedViews()
     }
 }
@@ -144,26 +142,40 @@ extension HPScrollView: UIGestureRecognizerDelegate {
 
 // MARK: - KVO
 extension HPScrollView {
-    func addOserver(to scrollView: UIScrollView) -> NSKeyValueObservation {
+    /*
+     *  MARK: - KVO
+     */
+    
+    func addObserver(to scrollView: UIScrollView) {
         lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
         
-        let token = scrollView.observe(\.contentOffset, options: [.old, .new]) {[weak self] scrollView, change in
-            guard let self = self else { return }
-            self.onChangeContentOffset(scrollView, change)
-        }
-        
-        return token
+        scrollView.addObserver(self,
+                               forKeyPath: #keyPath(UIScrollView.contentOffset),
+                               options: [.old, .new],
+                               context: &HPScrollView.KVOContext)
     }
     
+    func removeObserver(from scrollView: UIScrollView) {
+        scrollView.removeObserver(self,
+                                  forKeyPath: #keyPath(UIScrollView.contentOffset),
+                                  context: &HPScrollView.KVOContext)
+    }
+
+    
     //This is where the magic happens...
-    func onChangeContentOffset(_ scrollView: UIScrollView, _ change: NSKeyValueObservedChange<CGPoint>) {
-        guard let new = change.newValue else { return }
-        guard let old = change.oldValue else { return }
-        let diff = old.y - new.y
-        
-        if diff == 0.0 || !isObserving {
-            return
+    override open func observeValue(forKeyPath keyPath: String?,
+                                    of object: Any?,
+                                    change: [NSKeyValueChangeKey : Any]?,
+                                    context: UnsafeMutableRawPointer?) {
+        guard context == &HPScrollView.KVOContext && keyPath == #keyPath(UIScrollView.contentOffset) else {
+            return super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
+        
+        guard let scrollView = object as? UIScrollView,
+            let new = change?[.newKey] as? CGPoint,
+            let old = change?[.oldKey] as? CGPoint else { return }
+        let diff = old.y - new.y
+        if diff == 0.0 || !isObserving { return }
 
         if scrollView == self {
             
@@ -202,18 +214,13 @@ extension HPScrollView {
 // MARK: - Scrolling views handlers
 extension HPScrollView {
     func addObservedView(_ scrollView: UIScrollView) {
-        if observedViews.contains(scrollView) == false {
-            observedViews.append(scrollView)
-            let token = addOserver(to: scrollView)
-            otherKvoTokens.append(token)
-        }
+        guard !observedViews.contains(scrollView) else { return }
+        observedViews.append(scrollView)
+        addObserver(to: scrollView)
     }
     
     func removeObservedViews() {
-        for token in otherKvoTokens {
-            token.invalidate()
-        }
-        otherKvoTokens.removeAll()
+        observedViews.forEach { removeObserver(from: $0) }
         observedViews.removeAll()
     }
 

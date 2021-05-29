@@ -271,21 +271,14 @@ public class HPParallaxHeader: NSObject {
     }
     
     // MARK: - KVO
-    var kvoToken: NSKeyValueObservation?
-    func addObserveContentOffset(_ scrollView: UIScrollView) {
-        guard kvoToken == nil else { return }
-        kvoToken = scrollView.observe(\.contentOffset) { [weak self] _, _ in
-            guard let self = self else { return }
-            self.onChangeContentOffset()
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if context == &HPParallaxView.KVOContext {
+            if keyPath == #keyPath(UIScrollView.contentOffset) {
+                layoutContentView()
+            }
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
-    }
-    
-    func onChangeContentOffset() {
-        layoutContentView()
-    }
-    
-    func removeObserveContentOffset() {
-        kvoToken?.invalidate()
     }
 }
 
