@@ -118,8 +118,6 @@ public class HPScrollViewController: UIViewController {
     weak var childHeightConstraint: NSLayoutConstraint?
     
     
-    private var kvoToken: NSKeyValueObservation?
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
