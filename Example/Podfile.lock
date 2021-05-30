@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HPParallaxHeader: f0cd853e8296756e8097b2da1056e7eeb85e72f7
+  HPParallaxHeader: 6f55f178f0ea9235c30ec34939b7e382f50dadcf
 
 PODFILE CHECKSUM: c72c95e7cb4160a2c10c411d1d4f24e4bfacee91
 
