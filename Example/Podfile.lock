@@ -1,5 +1,5 @@
 PODS:
-  - HPParallaxHeader (0.1.0)
+  - HPParallaxHeader (1.1.0)
 
 DEPENDENCIES:
   - HPParallaxHeader (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HPParallaxHeader: 6f55f178f0ea9235c30ec34939b7e382f50dadcf
+  HPParallaxHeader: 582e30abea1680f2406407c985f7caafa182d6eb
 
 PODFILE CHECKSUM: c72c95e7cb4160a2c10c411d1d4f24e4bfacee91
 
