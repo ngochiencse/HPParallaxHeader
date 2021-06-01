@@ -98,7 +98,7 @@ extension HPScrollView: UIGestureRecognizerDelegate {
         
         var otherView = otherGestureRecognizer.view
         // WKWebView on he MXScrollView
-        if let wkContentClass = NSClassFromString("WKContent"),
+        if let wkContentClass = NSClassFromString("WKContentView"),
            let unwrapped = otherView, unwrapped.isKind(of: wkContentClass) {
             otherView = unwrapped.superview
         }
