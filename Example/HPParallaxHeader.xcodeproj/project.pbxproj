@@ -10,9 +10,9 @@
 		0E46870B26591CFE00804379 /* UIScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4687052658F3A700804379 /* UIScrollViewExample.swift */; };
 		0E7234092665F5A900134D4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7234072665F5A900134D4E /* LaunchScreen.storyboard */; };
 		0E8714CF2657BD5800327BD1 /* StarshipHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */; };
-		0E8714D12657BD8200327BD1 /* MXScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */; };
-		0EBD4A6C265A0C3200798655 /* MXFalconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */; };
-		0EBD4A6E265A0CEF00798655 /* MXWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */; };
+		0E8714D12657BD8200327BD1 /* HPScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */; };
+		0EBD4A6C265A0C3200798655 /* HPFalconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */; };
+		0EBD4A6E265A0CEF00798655 /* HPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */; };
 		3046F83DA72E20F5285F56B7 /* Pods_HPParallaxHeader_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AD6A27F03E2F5768320095 /* Pods_HPParallaxHeader_Example.framework */; };
 		54340CAAD83E77CA444DA693 /* Pods_HPParallaxHeader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FA2B4E17A92C1B32B5739 /* Pods_HPParallaxHeader_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -36,9 +36,9 @@
 		0E4687052658F3A700804379 /* UIScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExample.swift; sourceTree = "<group>"; };
 		0E7234082665F5A900134D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarshipHeader.xib; sourceTree = "<group>"; };
-		0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXScrollViewExample.swift; sourceTree = "<group>"; };
-		0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXFalconViewController.swift; sourceTree = "<group>"; };
-		0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXWebViewController.swift; sourceTree = "<group>"; };
+		0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPScrollViewExample.swift; sourceTree = "<group>"; };
+		0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPFalconViewController.swift; sourceTree = "<group>"; };
+		0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPWebViewController.swift; sourceTree = "<group>"; };
 		358ADADFEC650AAB3B0D1EEE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		43E192DCC80B3DB314273F2D /* Pods-HPParallaxHeader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPParallaxHeader_Example.release.xcconfig"; path = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HPParallaxHeader_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPParallaxHeader_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,9 +115,9 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				0E4687052658F3A700804379 /* UIScrollViewExample.swift */,
-				0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */,
-				0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */,
-				0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */,
+				0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */,
+				0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */,
+				0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				0E7234072665F5A900134D4E /* LaunchScreen.storyboard */,
 				0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */,
@@ -347,11 +347,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EBD4A6E265A0CEF00798655 /* MXWebViewController.swift in Sources */,
+				0EBD4A6E265A0CEF00798655 /* HPWebViewController.swift in Sources */,
 				0E46870B26591CFE00804379 /* UIScrollViewExample.swift in Sources */,
-				0EBD4A6C265A0C3200798655 /* MXFalconViewController.swift in Sources */,
+				0EBD4A6C265A0C3200798655 /* HPFalconViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				0E8714D12657BD8200327BD1 /* MXScrollViewExample.swift in Sources */,
+				0E8714D12657BD8200327BD1 /* HPScrollViewExample.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
