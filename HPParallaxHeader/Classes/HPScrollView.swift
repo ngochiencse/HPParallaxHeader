@@ -92,7 +92,7 @@ extension HPScrollView: UIGestureRecognizerDelegate {
         guard let velocity = (gestureRecognizer as? UIPanGestureRecognizer)?.velocity(in: self) else {
             return false
         }
-        if (fabs(velocity.x) > fabs(velocity.y)) {
+        if (abs(velocity.x) > abs(velocity.y)) {
             return false
         }
         

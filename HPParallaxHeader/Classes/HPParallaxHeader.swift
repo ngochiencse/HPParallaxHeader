@@ -243,17 +243,17 @@ public class HPParallaxHeader: NSObject {
     
 
     private func layoutContentView() {
-        let minimumHeight = min(minimumHeight, height);
+        let minimumHeightReal = min(minimumHeight, height);
         let relativeYOffset = (scrollView?.contentOffset.y ?? 0) + (scrollView?.contentInset.top ?? 0) - height
         let relativeHeight  = -relativeYOffset;
 
         positionConstraint?.constant = relativeYOffset
-        heightConstraint?.constant = max(relativeHeight, minimumHeight)
+        heightConstraint?.constant = max(relativeHeight, minimumHeightReal)
 
         contentView.layoutSubviews()
         
-        let div = height - minimumHeight
-        progress = (contentView.frame.size.height - minimumHeight) / (div != 0 ? div : height)
+        let div = height - minimumHeightReal
+        progress = (contentView.frame.size.height - minimumHeightReal) / (div != 0 ? div : height)
     }
     
     private func adjustScrollViewTopInset(_ top: CGFloat) {
