@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E46870B26591CFE00804379 /* UIScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4687052658F3A700804379 /* UIScrollViewExample.swift */; };
+		0E7234092665F5A900134D4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7234072665F5A900134D4E /* LaunchScreen.storyboard */; };
 		0E8714CF2657BD5800327BD1 /* StarshipHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */; };
 		0E8714D12657BD8200327BD1 /* MXScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */; };
 		0EBD4A6C265A0C3200798655 /* MXFalconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */; };
@@ -18,7 +19,6 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		0E4687052658F3A700804379 /* UIScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExample.swift; sourceTree = "<group>"; };
+		0E7234082665F5A900134D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarshipHeader.xib; sourceTree = "<group>"; };
 		0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXScrollViewExample.swift; sourceTree = "<group>"; };
 		0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXFalconViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* HPParallaxHeader_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPParallaxHeader_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -119,9 +119,9 @@
 				0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */,
 				0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				0E7234072665F5A900134D4E /* LaunchScreen.storyboard */,
 				0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for HPParallaxHeader";
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				0E7234092665F5A900134D4E /* LaunchScreen.storyboard in Resources */,
 				0E8714CF2657BD5800327BD1 /* StarshipHeader.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -375,20 +375,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0E7234072665F5A900134D4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7234082665F5A900134D4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				607FACDA1AFB9204008FA782 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
