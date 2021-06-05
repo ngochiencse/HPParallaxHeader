@@ -1,0 +1,16 @@
+PODS:
+  - HPParallaxHeader (1.1.0)
+
+DEPENDENCIES:
+  - HPParallaxHeader (from `../`)
+
+EXTERNAL SOURCES:
+  HPParallaxHeader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HPParallaxHeader: 582e30abea1680f2406407c985f7caafa182d6eb
+
+PODFILE CHECKSUM: c72c95e7cb4160a2c10c411d1d4f24e4bfacee91
+
+COCOAPODS: 1.10.0

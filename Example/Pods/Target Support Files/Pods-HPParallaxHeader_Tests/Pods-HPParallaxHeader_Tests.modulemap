@@ -1,0 +1,6 @@
+framework module Pods_HPParallaxHeader_Tests {
+  umbrella header "Pods-HPParallaxHeader_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
