@@ -2,11 +2,12 @@
 
 [![Travis (.com)](https://img.shields.io/travis/com/ngochiencse/HPParallaxHeader)](https://www.travis-ci.com/github/ngochiencse/HPParallaxHeader)
 [![Version](https://img.shields.io/cocoapods/v/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
+![Swift 5.0](https://img.shields.io/badge/swift-5.0-orange)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
 [![Cocoapods platforms](https://img.shields.io/cocoapods/p/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
 
-:warning: This project is no longer maintained, see [#124](https://github.com/maxep/HPParallaxHeader/issues/124) :warning:
+HPParallaxHeader is a Swift conversion from https://github.com/maxep/MXParallaxHeader.
 
 HPParallaxHeader is a simple header class for UIScrollView.
 

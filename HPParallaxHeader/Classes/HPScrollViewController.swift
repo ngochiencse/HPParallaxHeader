@@ -12,7 +12,7 @@ private var parallaxHeaderKey: UInt8 = 0
 /**
  The MXScrollViewController class.
  */
-public class HPScrollViewController: UIViewController {
+open class HPScrollViewController: UIViewController {
     static var KVOContext = "kDMScrollViewControllerKVOContext"
 
     /**

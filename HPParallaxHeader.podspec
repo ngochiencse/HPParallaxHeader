@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HPParallaxHeader'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'Simple parallax header for UIScrollView.'
 
 # This description is used to generate tags and improve search results.

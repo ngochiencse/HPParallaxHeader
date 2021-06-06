@@ -41,7 +41,7 @@ public protocol HPParallaxHeaderDelegate: AnyObject {
     func parallaxHeaderDidScroll(_ parallaxHeader: HPParallaxHeader)
 }
 
-public class HPParallaxHeader: NSObject {
+open class HPParallaxHeader: NSObject {
     /**
      The content view on top of the UIScrollView's content.
      */
