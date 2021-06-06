@@ -18,7 +18,7 @@ let package = Package(
         .target(
             name: "HPParallaxHeader",
             dependencies: [],
-            path: "Example",
+            path: "HPParallaxHeader",
             publicHeadersPath: ".")
     ]
 )
