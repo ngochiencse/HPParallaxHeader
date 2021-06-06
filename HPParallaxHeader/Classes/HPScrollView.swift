@@ -26,7 +26,7 @@ import UIKit
 /**
  The MXScrollView is a UIScrollView subclass with the ability to hook the vertical scroll from its subviews.
  */
-public class HPScrollView : UIScrollView {
+open class HPScrollView : UIScrollView {
     static var KVOContext = "kHPScrollViewKVOContext"
 
     /**
@@ -53,7 +53,7 @@ public class HPScrollView : UIScrollView {
         initialize()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
     }
@@ -92,13 +92,13 @@ extension HPScrollView: UIGestureRecognizerDelegate {
         guard let velocity = (gestureRecognizer as? UIPanGestureRecognizer)?.velocity(in: self) else {
             return false
         }
-        if (fabs(velocity.x) > fabs(velocity.y)) {
+        if (abs(velocity.x) > abs(velocity.y)) {
             return false
         }
         
         var otherView = otherGestureRecognizer.view
         // WKWebView on he MXScrollView
-        if let wkContentClass = NSClassFromString("WKContent"),
+        if let wkContentClass = NSClassFromString("WKContentView"),
            let unwrapped = otherView, unwrapped.isKind(of: wkContentClass) {
             otherView = unwrapped.superview
         }

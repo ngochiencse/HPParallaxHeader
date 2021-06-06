@@ -12,12 +12,24 @@ private var parallaxHeaderKey: UInt8 = 0
 /**
  The MXScrollViewController class.
  */
-public class HPScrollViewController: UIViewController {
+open class HPScrollViewController: UIViewController {
+    static var KVOContext = "kDMScrollViewControllerKVOContext"
+
     /**
      The scroll view container.
      */
-    public let scrollView: HPScrollView = HPScrollView()
-    
+    var _scrollView: HPScrollView?
+    public var scrollView: HPScrollView {
+        if _scrollView == nil {
+            _scrollView = HPScrollView(frame: .zero)
+            _scrollView?.parallaxHeader.addObserver(self,
+                                                   forKeyPath:#keyPath(HPParallaxHeader.minimumHeight),
+                                                   options: .new,
+                                                   context: &HPScrollViewController.KVOContext)
+        }
+        return _scrollView!
+    }
+
     /**
      The parallax header view controller to be added to the scroll view.
      */
@@ -106,18 +118,10 @@ public class HPScrollViewController: UIViewController {
     weak var childHeightConstraint: NSLayoutConstraint?
     
     
-    private var kvoToken: NSKeyValueObservation?
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        kvoToken = scrollView.parallaxHeader
-            .observe(\.minimumHeight, options: .new) { [weak self] (parallaxHeader, change) in
-                guard let self = self else { return }
-                self.childHeightConstraint?.constant = -self.scrollView.parallaxHeader.minimumHeight;
-            }
-        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(scrollView)
@@ -168,8 +172,23 @@ public class HPScrollViewController: UIViewController {
         }
     }
     
+    /*
+     *  MARK: - KVO
+     */
+    
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                                      change: [NSKeyValueChangeKey : Any]?,
+                                      context: UnsafeMutableRawPointer?) {
+        guard context == &HPScrollViewController.KVOContext else {
+            return super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+        if childViewController != nil && keyPath == #keyPath(HPParallaxHeader.minimumHeight) {
+            self.childHeightConstraint?.constant = -self.scrollView.parallaxHeader.minimumHeight;
+        }
+    }
+    
     deinit {
-        kvoToken?.invalidate()
+        scrollView.parallaxHeader.removeObserver(self, forKeyPath: #keyPath(HPParallaxHeader.minimumHeight))
     }
 }
 

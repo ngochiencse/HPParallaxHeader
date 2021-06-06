@@ -1,0 +1,6 @@
+framework module HPParallaxHeader {
+  umbrella header "HPParallaxHeader-umbrella.h"
+
+  export *
+  module * { export * }
+}

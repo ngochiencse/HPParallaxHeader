@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gJ1-TG-u0D">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,20 +12,20 @@
             <objects>
                 <tableViewController id="5wP-tC-L4h" customClass="UIScrollViewExample" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="rFe-ya-cfR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99215686274509807" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.99607843137254903" green="0.99215686274509807" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pgl-bc-CYS" style="IBUITableViewCellStyleDefault" id="mIY-YQ-MPX">
-                                <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="66"/>
+                                <rect key="frame" x="0.0" y="24.5" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIY-YQ-MPX" id="SUD-k0-U59">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pgl-bc-CYS">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="66"/>
+                                            <rect key="frame" x="20" y="0.0" width="560" height="66"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.058823529409999999" green="0.1019607843" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -88,7 +86,7 @@
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="wpI-o5-ONu" customClass="HPScrollViewController" customModule="HPParallaxHeader" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jJk-lh-dPo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6c2-ZJ-CLn"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,19 +156,19 @@
         <!--MXScrollView-->
         <scene sceneID="Wus-Wb-PlD">
             <objects>
-                <viewController restorationIdentifier="MXScrollView" id="ft2-aT-thd" customClass="MXScrollViewExample" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MXScrollView" id="ft2-aT-thd" customClass="HPScrollViewExample" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbU-g6-y3Y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAk-je-ZPQ" customClass="HPScrollView" customModule="HPParallaxHeader">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdO-DV-sOC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2DF-tw-JRW">
-                                                <rect key="frame" x="0.0" y="0.0" width="200.66666666666666" height="687"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="290.5" height="551"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="ft2-aT-thd" id="KBH-89-BC2"/>
@@ -178,7 +176,7 @@
                                                 </connections>
                                             </tableView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-t1-9RU">
-                                                <rect key="frame" x="200.66666666666663" y="0.0" width="213.33333333333337" height="687"/>
+                                                <rect key="frame" x="290.5" y="0.0" width="309.5" height="551"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="ft2-aT-thd" id="4Cb-rZ-njK"/>
@@ -235,13 +233,13 @@
         <!--Web View Controller-->
         <scene sceneID="e88-UT-JKL">
             <objects>
-                <viewController id="erx-Ha-mfa" customClass="MXWebViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="erx-Ha-mfa" customClass="HPWebViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vPo-vc-HEb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWq-uf-ZaW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -290,7 +288,7 @@
         <!--Falcon View Controller-->
         <scene sceneID="ROx-wQ-jV4">
             <objects>
-                <viewController id="c12-C7-n3f" customClass="MXFalconViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c12-C7-n3f" customClass="HPFalconViewController" customModule="HPParallaxHeader_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gU8-90-gva">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

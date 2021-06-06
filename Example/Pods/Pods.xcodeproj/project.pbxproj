@@ -1,0 +1,1215 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07C51E40D4181845725811DA42D8EA80 /* Pods-HPParallaxHeader_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0362CE63C4955CB79E5A9B231DD70FD7 /* Pods-HPParallaxHeader_Example-dummy.m */; };
+		08F27084CEC7F6214888E0730474EA7C /* UIScrollView+ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932C6E4A096CAA72BB7EC82F85962CF5 /* UIScrollView+ParallaxHeader.swift */; };
+		0D522192095B03BB121AF781BF544DAE /* AnyPagingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5682599E4DCFE2926F152713A8F0BDC8 /* AnyPagingItem.swift */; };
+		0F4C18B31A4EEC051F535C1C3E52E4DC /* HPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EEC68CB8F32644D2FDE1C2FF9F256B /* HPScrollView.swift */; };
+		109F659C029172AF837165B1C272BAAC /* PagingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809925925F678AFD4466AF4316E26EDA /* PagingState.swift */; };
+		1742AC1E130AE352E5C78BBEB8599125 /* PagingInvalidationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A46DA7F20FCAA5247E508C998C5B98E /* PagingInvalidationContext.swift */; };
+		181E15A274F2D6A161DEBEF9D174C00F /* PagingSizeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7A57F4EB813052A6B3A0F6EFF9A3C /* PagingSizeCache.swift */; };
+		1B843F78A849AE99A03F29AFB129C0F9 /* PagingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67AEAF30DDC063CCA0D65F8081EDFB9 /* PagingItem.swift */; };
+		1D1AD4E1E8D137808A1DBF14E871AAEA /* PagingMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1F757FBC906BFF17BE904D6B8A1B2B /* PagingMenuDelegate.swift */; };
+		1E1C37505C8FF000DCB67CEC45E1E737 /* PagingBorderLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B0D3493E2BA4495F07FD1DDB95CE48 /* PagingBorderLayoutAttributes.swift */; };
+		1E8FF4FA576BC45DEA5D1ECC1468F90D /* Parchment-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB54CFB8404E3753E8C2524CCFB9D9EA /* Parchment-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22C25BE09A377A4A3DEFAECA7EBE6929 /* PagingSelectedScrollPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10626FBEE980C327EBDC9371B89ECDFE /* PagingSelectedScrollPosition.swift */; };
+		2640033B8342C4EC45E5F911B09D1D3A /* PagingIndicatorLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67FFD6CCF394D5BDECD33A299597AC6 /* PagingIndicatorLayoutAttributes.swift */; };
+		270D1E2780BDD2DA90B69E5537E89A37 /* Pods-HPParallaxHeader_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 137B06EF9B6C94B3EF3F5B56449AB32B /* Pods-HPParallaxHeader_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A56D138D623A33A078470508C5877FF /* PagingViewControllerSizeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE343255C0A52166F5E51548399C474A /* PagingViewControllerSizeDelegate.swift */; };
+		2C9366A1B9EE92BAA7E4D62289177108 /* PagingDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57272C95A6EFF02820101272C6E26810 /* PagingDistance.swift */; };
+		2E8A1B4FD6AA6812F3C5E323B15381FE /* PagingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB80E9FEE0B2013B4B2A4846CE3A6D /* PagingTransition.swift */; };
+		327DA2CE5D9475F8812418C436DC92BD /* InvalidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5442DC488E34A7ABC7A307E1FA08EB7 /* InvalidationState.swift */; };
+		37AFF0400220F4ED6E06779C16F0E11C /* UIColor+interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F838EC00EE8F5A563B0D7E5E22EF296 /* UIColor+interpolation.swift */; };
+		384B93C6E72755BE0A7ED831EDC2EA55 /* PagingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EE9549F4FA551E05409F0C4C1A4747 /* PagingLayout.swift */; };
+		396D5E703627889AB9CC5A2252B4698D /* PagingDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CFFD34BAEA7CA4A958364F8B632D8F /* PagingDiff.swift */; };
+		3B27CF29BC8C2A47E3F760927C724656 /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5283B6EA97B391E097C43C672A42DAB /* PagingView.swift */; };
+		3BC0FD85AEADC327CFABDB22D36372CE /* HPScrollViewDelegateForwarder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC7028EE722EFAA6E76740847076C6 /* HPScrollViewDelegateForwarder.swift */; };
+		3D0122ACEA29BEF6FEF51A7748766213 /* PagingFiniteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FDB89FA99136E1FABC1D50AE409FD2 /* PagingFiniteDataSource.swift */; };
+		3EA2F0041BAB7D2EA90C296B7B601D87 /* PagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F406F144B9FB900F9F737E177312DD /* PagingCell.swift */; };
+		40854120870D906DA9CF9F6818C2A586 /* PageViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0B72C2C3B8A3BCF441DA0B236A0172 /* PageViewState.swift */; };
+		45BE4348708F7D21D48F8A31D8F0DCC0 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576EBAFDE2E167BA47F285CCA58289F /* CollectionView.swift */; };
+		46FB514B552478DCA59FA9AD56CFEB19 /* PagingContentInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D8BEE4001FCFE482359431E0967F62 /* PagingContentInteraction.swift */; };
+		526E745520215F0987FF895FE0F4546A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		52C936D4F8E82594AB2D9DCCF115ACE2 /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E454791DDC5D7B74ECBE01B4778003C3 /* UIEdgeInsets.swift */; };
+		576B418F3E22442F549991C4D87A767F /* PagingMenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEBF6303D26EE98653B93DCFFE08001 /* PagingMenuDataSource.swift */; };
+		58497C193F64EAE7E1E3D298F2B6DA0C /* PagingViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD27A0BA0ACEB0D2517B46719AD949F /* PagingViewControllerDataSource.swift */; };
+		5A1881917EF30A9AEE4A4810A7681E21 /* Pods-HPParallaxHeader_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D344414014FCFE0F56C1D9158C036920 /* Pods-HPParallaxHeader_Tests-dummy.m */; };
+		5AAEE2A5860ADF1F54CDC8015F376FB9 /* PagingBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDA3E302BE9E26D10950D4DDA03F76C /* PagingBorderView.swift */; };
+		5CA6CC19DB976254ADB250213FE04C48 /* PagingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A7C47D48B10A0A731701C4DA4EF87B /* PagingItems.swift */; };
+		6A504186E13C622D382A945DD86BECD5 /* PageViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3CBD74A3619C14E36E884CFAD6F021 /* PageViewDirection.swift */; };
+		6B2EBAB6DD41A4B60C440537A2F71ADA /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFB163A5FDCE084635237B955EB64C5 /* PageViewController.swift */; };
+		6D1B32FA2067DF05B85CA6BC76A7055A /* PageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E65123BF4B4A4EEA8B9F1845B6E5AB /* PageViewControllerDataSource.swift */; };
+		7719B56A201A45735B8A51C9399C6AD7 /* PagingMenuItemSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE31732B43E31B1A7B3CEF633994AA1D /* PagingMenuItemSize.swift */; };
+		833A2DCD78A668EAF2E6ECEA9BE7DF24 /* PagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA4444D549906E17B662BC3E8CBC52C /* PagingController.swift */; };
+		845096CC57E982CD0D6A320449F2B3AF /* PagingCellLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3BE0803C3F716D1162CDF031AC413E /* PagingCellLayoutAttributes.swift */; };
+		89E3692009842C0B79E06FB70889A88D /* PagingDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50743F24EED988AAF5966F334FB1E61F /* PagingDirection.swift */; };
+		91F5DA701389462310FF1F343BC6822E /* PagingMenuHorizontalAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D27D6BE7EA517D392FA998983B7F66E /* PagingMenuHorizontalAlignment.swift */; };
+		94DA4FD9C49C34E5C3C7B6C983E93DAB /* HPParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EEE6FE12C69202C9D143956C6B54CC /* HPParallaxView.swift */; };
+		9BB6D46693C1C564150AF319444042A5 /* PagingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DABBBF3A40557FBDEAD4C87FED66CDC /* PagingIndicatorView.swift */; };
+		9C3D77F17E713775E48674441FB65A05 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F7A7D531BA635F50622EC755458E1 /* PageView.swift */; };
+		9FAD2F79F93DE8966DAD754F56D76C2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A2511C9A5374FEFE25D210147AE5BAA8 /* Parchment-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 351B368BC286948262D43D4EE76AF93C /* Parchment-dummy.m */; };
+		A4C384CF78CF2D00DE64B72423FA51E7 /* PageViewManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A47C65ED54798FD3FD097332C1494E /* PageViewManagerDelegate.swift */; };
+		A7EC2CD87B33FCE32907E079BFA797CA /* PagingStaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547AE7447DAD8701027B3AA9BF6D8252 /* PagingStaticDataSource.swift */; };
+		A98AA55E683BECEC5A2F0A05E44D82E2 /* HPParallaxHeader-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0D6FE7769E5BB384D61C245FB8149E /* HPParallaxHeader-dummy.m */; };
+		A9AAF2C56A27D4ADF9A421536E4700DF /* PageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE3B00E88DBCE745B77DACCEE9C85E9 /* PageViewControllerDelegate.swift */; };
+		ABB815F3ABE8FFF39F90212D18991BF2 /* PagingMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB5D4B45FDAA0B60F233EF9FE2F4963 /* PagingMenuView.swift */; };
+		AC1700C0CAEBA26E5178076E84E5AFE8 /* PagingMenuInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C4A5BAF8FEADDF926CF126837AD86C /* PagingMenuInteraction.swift */; };
+		B7683EE1BD68E797E42A14A4E24A8B78 /* PagingIndexItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861F42FB6941CF9ADADDD8F65DBF83D6 /* PagingIndexItem.swift */; };
+		BC2DEA430D36C51DF5F61751EDEAEED8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		BD47077E487BE1EF196B96535DB51CCD /* Tween.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77DCA889F4C882EAEFA4B14CF1B926 /* Tween.swift */; };
+		BED2871609E32CE5BE41CD7111333798 /* PagingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD576C07639537AA66A756EAEB24670 /* PagingOptions.swift */; };
+		BFC6E89FBE3312FDEEE4A6CD062B87AA /* HPParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D795AD297DF774997824B96390F7A /* HPParallaxHeader.swift */; };
+		C236B7B8C1F8DC1760E55B637729D771 /* PageViewManagerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC847C9EA0709B3A549CF0238FB78233 /* PageViewManagerDataSource.swift */; };
+		C4BB9BCEC4438A6928C34A4924A4FFC5 /* PagingViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FEC61E89F6FB90DAFC14D9E84AA282 /* PagingViewControllerDelegate.swift */; };
+		C5D3863B12FBF0BFA4E297DC6249359F /* PagingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D5534D4166006B56047E4F6FF9E63 /* PagingCellViewModel.swift */; };
+		C6D675F08463AC45AC7F36525A09BA95 /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E875D0ACA882DA3907F4864FFE6EFC /* PagingViewController.swift */; };
+		C892F4BD4795C624582FF290E3858254 /* PagingMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AFAC1CA9263FE7CEC2251E951D447C /* PagingMenuTransition.swift */; };
+		D3DE98DBBD84876658D174421E548F62 /* PagingViewControllerInfiniteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AD3FD97CF343384AF58E2828CB2E6F /* PagingViewControllerInfiniteDataSource.swift */; };
+		DAE884EC6413E142574AA7F99AD126F9 /* HPParallaxHeader-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70CD3E447566FED76D1AC51ADD620B63 /* HPParallaxHeader-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE837117E59395D275813F94A34A1308 /* HPScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C3CF3ACE4EE785109A652D1FD5971 /* HPScrollViewController.swift */; };
+		DF080916B7B4250E9DE4227B3E19A4EE /* PagingTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A70937E463A4DB5D584533E18C5151 /* PagingTitleCell.swift */; };
+		E04079DB74A408A5F5A625DCFCFB9EBC /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA58A704773C0DF26C40B3E8F46AA53 /* UIView+constraints.swift */; };
+		E1981C431BC612FCD093924BA16ABB7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E1F0B990BB5F9B7239558E87B70A7F77 /* PagingIndicatorOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37CED1E2FF0B060282CEDBCD8AC62F1 /* PagingIndicatorOptions.swift */; };
+		E435FA73C7AB697A75937B10F5A8BFF3 /* PageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD72C1523B5883A003608B6E72C5A41 /* PageViewManager.swift */; };
+		E93134BBBE06146958073C93087703D0 /* PagingMenuPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746CEC6491E5B4EAF33FD7BF91A8CD1 /* PagingMenuPosition.swift */; };
+		EAF8E5CBB6507D7C2FC2B09C135D470A /* PagingNavigationOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADA3E8049D24283277EF65DD24ABFCA /* PagingNavigationOrientation.swift */; };
+		ED517FEB751D53D8A821111B7254A925 /* PagingBorderOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE71314F34F777E52A67A3AEE79AAB8 /* PagingBorderOptions.swift */; };
+		F2CF6AB02C2972418370FF8694FF763A /* PagingIndicatorMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172B5FFC665923C3E130F3152ABD6786 /* PagingIndicatorMetric.swift */; };
+		F53DC785A913556433B964C543C86C5B /* PagingCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B8CC401ADA1CB1CBC1D074167109B1 /* PagingCollectionViewLayout.swift */; };
+		FB7885EE242917864CB193300A523B8D /* Pods-HPParallaxHeader_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AF553B6CDE8F3DB4AE164C3D081E8918 /* Pods-HPParallaxHeader_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCEA5B6CF52DF4436A100E83A35B5254 /* PagingMenuItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D259A249E4882431A4BEE76B47919CB3 /* PagingMenuItemSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0011D3C48AB3EC8B3E8A763768165C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18184DEEDE7075D999122505659B55E9;
+			remoteInfo = Parchment;
+		};
+		28B915AA790FCA15FE0C3D6CF2E1AF10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36BA4D1C0A680796B9F13C0EF485D875;
+			remoteInfo = HPParallaxHeader;
+		};
+		803F8A376E8508B610530C59FCC97379 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C54D54BFEF34CCC7F6487C566C3FDE3;
+			remoteInfo = "Pods-HPParallaxHeader_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0362CE63C4955CB79E5A9B231DD70FD7 /* Pods-HPParallaxHeader_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HPParallaxHeader_Example-dummy.m"; sourceTree = "<group>"; };
+		042D5534D4166006B56047E4F6FF9E63 /* PagingCellViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingCellViewModel.swift; path = Parchment/Structs/PagingCellViewModel.swift; sourceTree = "<group>"; };
+		05AC7028EE722EFAA6E76740847076C6 /* HPScrollViewDelegateForwarder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HPScrollViewDelegateForwarder.swift; path = HPParallaxHeader/Classes/HPScrollViewDelegateForwarder.swift; sourceTree = "<group>"; };
+		0746CEC6491E5B4EAF33FD7BF91A8CD1 /* PagingMenuPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuPosition.swift; path = Parchment/Enums/PagingMenuPosition.swift; sourceTree = "<group>"; };
+		07CB80E9FEE0B2013B4B2A4846CE3A6D /* PagingTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingTransition.swift; path = Parchment/Structs/PagingTransition.swift; sourceTree = "<group>"; };
+		08AFAC1CA9263FE7CEC2251E951D447C /* PagingMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuTransition.swift; path = Parchment/Enums/PagingMenuTransition.swift; sourceTree = "<group>"; };
+		0F838EC00EE8F5A563B0D7E5E22EF296 /* UIColor+interpolation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+interpolation.swift"; path = "Parchment/Extensions/UIColor+interpolation.swift"; sourceTree = "<group>"; };
+		10626FBEE980C327EBDC9371B89ECDFE /* PagingSelectedScrollPosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingSelectedScrollPosition.swift; path = Parchment/Enums/PagingSelectedScrollPosition.swift; sourceTree = "<group>"; };
+		12EEC68CB8F32644D2FDE1C2FF9F256B /* HPScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HPScrollView.swift; path = HPParallaxHeader/Classes/HPScrollView.swift; sourceTree = "<group>"; };
+		137B06EF9B6C94B3EF3F5B56449AB32B /* Pods-HPParallaxHeader_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HPParallaxHeader_Tests-umbrella.h"; sourceTree = "<group>"; };
+		1576EBAFDE2E167BA47F285CCA58289F /* CollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionView.swift; path = Parchment/Protocols/CollectionView.swift; sourceTree = "<group>"; };
+		172B5FFC665923C3E130F3152ABD6786 /* PagingIndicatorMetric.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingIndicatorMetric.swift; path = Parchment/Structs/PagingIndicatorMetric.swift; sourceTree = "<group>"; };
+		19A47C65ED54798FD3FD097332C1494E /* PageViewManagerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewManagerDelegate.swift; path = Parchment/Protocols/PageViewManagerDelegate.swift; sourceTree = "<group>"; };
+		227C87BA15DD73F2F41827E6993BCE61 /* HPParallaxHeader-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HPParallaxHeader-Info.plist"; sourceTree = "<group>"; };
+		27EE9549F4FA551E05409F0C4C1A4747 /* PagingLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingLayout.swift; path = Parchment/Protocols/PagingLayout.swift; sourceTree = "<group>"; };
+		2DB5D4B45FDAA0B60F233EF9FE2F4963 /* PagingMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuView.swift; path = Parchment/Classes/PagingMenuView.swift; sourceTree = "<group>"; };
+		335D795AD297DF774997824B96390F7A /* HPParallaxHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HPParallaxHeader.swift; path = HPParallaxHeader/Classes/HPParallaxHeader.swift; sourceTree = "<group>"; };
+		351B368BC286948262D43D4EE76AF93C /* Parchment-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Parchment-dummy.m"; sourceTree = "<group>"; };
+		3A1F7A7D531BA635F50622EC755458E1 /* PageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageView.swift; path = Parchment/Structs/PageView.swift; sourceTree = "<group>"; };
+		3C0B72C2C3B8A3BCF441DA0B236A0172 /* PageViewState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewState.swift; path = Parchment/Enums/PageViewState.swift; sourceTree = "<group>"; };
+		3DC7DEED68419B1389D3F1EEA6456896 /* Pods-HPParallaxHeader_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HPParallaxHeader_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		458C3CF3ACE4EE785109A652D1FD5971 /* HPScrollViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HPScrollViewController.swift; path = HPParallaxHeader/Classes/HPScrollViewController.swift; sourceTree = "<group>"; };
+		48A7A57F4EB813052A6B3A0F6EFF9A3C /* PagingSizeCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingSizeCache.swift; path = Parchment/Classes/PagingSizeCache.swift; sourceTree = "<group>"; };
+		4AA58A704773C0DF26C40B3E8F46AA53 /* UIView+constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+constraints.swift"; path = "Parchment/Extensions/UIView+constraints.swift"; sourceTree = "<group>"; };
+		4DABBBF3A40557FBDEAD4C87FED66CDC /* PagingIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingIndicatorView.swift; path = Parchment/Classes/PagingIndicatorView.swift; sourceTree = "<group>"; };
+		50743F24EED988AAF5966F334FB1E61F /* PagingDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingDirection.swift; path = Parchment/Enums/PagingDirection.swift; sourceTree = "<group>"; };
+		53F406F144B9FB900F9F737E177312DD /* PagingCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingCell.swift; path = Parchment/Classes/PagingCell.swift; sourceTree = "<group>"; };
+		547AE7447DAD8701027B3AA9BF6D8252 /* PagingStaticDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingStaticDataSource.swift; path = Parchment/Classes/PagingStaticDataSource.swift; sourceTree = "<group>"; };
+		558DC9D7AACA2CC63F9A5275FD2B02CD /* Pods-HPParallaxHeader_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HPParallaxHeader_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		5682599E4DCFE2926F152713A8F0BDC8 /* AnyPagingItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPagingItem.swift; path = Parchment/Structs/AnyPagingItem.swift; sourceTree = "<group>"; };
+		57272C95A6EFF02820101272C6E26810 /* PagingDistance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingDistance.swift; path = Parchment/Structs/PagingDistance.swift; sourceTree = "<group>"; };
+		5A46DA7F20FCAA5247E508C998C5B98E /* PagingInvalidationContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingInvalidationContext.swift; path = Parchment/Classes/PagingInvalidationContext.swift; sourceTree = "<group>"; };
+		5CD27A0BA0ACEB0D2517B46719AD949F /* PagingViewControllerDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingViewControllerDataSource.swift; path = Parchment/Protocols/PagingViewControllerDataSource.swift; sourceTree = "<group>"; };
+		5D27D6BE7EA517D392FA998983B7F66E /* PagingMenuHorizontalAlignment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuHorizontalAlignment.swift; path = Parchment/Enums/PagingMenuHorizontalAlignment.swift; sourceTree = "<group>"; };
+		5EA8D7D57DF68527F1930E66F7CED2EC /* Pods-HPParallaxHeader_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HPParallaxHeader_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5FE8064AAA5F8B30DEC32E5F30862B64 /* Parchment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parchment.release.xcconfig; sourceTree = "<group>"; };
+		63A797E43F8295C6ABA8D4B269EFFED7 /* Parchment.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Parchment.modulemap; sourceTree = "<group>"; };
+		6B0D6FE7769E5BB384D61C245FB8149E /* HPParallaxHeader-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HPParallaxHeader-dummy.m"; sourceTree = "<group>"; };
+		6BA4444D549906E17B662BC3E8CBC52C /* PagingController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingController.swift; path = Parchment/Classes/PagingController.swift; sourceTree = "<group>"; };
+		6DFB163A5FDCE084635237B955EB64C5 /* PageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = Parchment/Classes/PageViewController.swift; sourceTree = "<group>"; };
+		6EE2012C7BA5D98AE2C7D630E19053AB /* Pods_HPParallaxHeader_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HPParallaxHeader_Tests.framework; path = "Pods-HPParallaxHeader_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CD3E447566FED76D1AC51ADD620B63 /* HPParallaxHeader-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HPParallaxHeader-umbrella.h"; sourceTree = "<group>"; };
+		72E65123BF4B4A4EEA8B9F1845B6E5AB /* PageViewControllerDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewControllerDataSource.swift; path = Parchment/Protocols/PageViewControllerDataSource.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75C4A5BAF8FEADDF926CF126837AD86C /* PagingMenuInteraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuInteraction.swift; path = Parchment/Enums/PagingMenuInteraction.swift; sourceTree = "<group>"; };
+		7A3BE0803C3F716D1162CDF031AC413E /* PagingCellLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingCellLayoutAttributes.swift; path = Parchment/Classes/PagingCellLayoutAttributes.swift; sourceTree = "<group>"; };
+		7D074FB52605415B0DA4E7099F907900 /* Pods-HPParallaxHeader_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HPParallaxHeader_Tests.modulemap"; sourceTree = "<group>"; };
+		7F7FAF33DDE36CDDBCC1AC58CC3CFDF8 /* HPParallaxHeader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HPParallaxHeader.framework; path = HPParallaxHeader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		809925925F678AFD4466AF4316E26EDA /* PagingState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingState.swift; path = Parchment/Enums/PagingState.swift; sourceTree = "<group>"; };
+		80FEC61E89F6FB90DAFC14D9E84AA282 /* PagingViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingViewControllerDelegate.swift; path = Parchment/Protocols/PagingViewControllerDelegate.swift; sourceTree = "<group>"; };
+		83D8BEE4001FCFE482359431E0967F62 /* PagingContentInteraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingContentInteraction.swift; path = Parchment/Enums/PagingContentInteraction.swift; sourceTree = "<group>"; };
+		861F42FB6941CF9ADADDD8F65DBF83D6 /* PagingIndexItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingIndexItem.swift; path = Parchment/Structs/PagingIndexItem.swift; sourceTree = "<group>"; };
+		8661C5BE90EE15B43BEECE193EAA3D3D /* Pods-HPParallaxHeader_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HPParallaxHeader_Tests-Info.plist"; sourceTree = "<group>"; };
+		8ADA3E8049D24283277EF65DD24ABFCA /* PagingNavigationOrientation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingNavigationOrientation.swift; path = Parchment/Structs/PagingNavigationOrientation.swift; sourceTree = "<group>"; };
+		8F77DCA889F4C882EAEFA4B14CF1B926 /* Tween.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tween.swift; path = Parchment/Protocols/Tween.swift; sourceTree = "<group>"; };
+		932C6E4A096CAA72BB7EC82F85962CF5 /* UIScrollView+ParallaxHeader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+ParallaxHeader.swift"; path = "HPParallaxHeader/Classes/UIScrollView+ParallaxHeader.swift"; sourceTree = "<group>"; };
+		97AD94F43AD55B9B42B907C8D1F356F1 /* HPParallaxHeader.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HPParallaxHeader.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97B0D3493E2BA4495F07FD1DDB95CE48 /* PagingBorderLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingBorderLayoutAttributes.swift; path = Parchment/Classes/PagingBorderLayoutAttributes.swift; sourceTree = "<group>"; };
+		98E875D0ACA882DA3907F4864FFE6EFC /* PagingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingViewController.swift; path = Parchment/Classes/PagingViewController.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FE3B00E88DBCE745B77DACCEE9C85E9 /* PageViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewControllerDelegate.swift; path = Parchment/Protocols/PageViewControllerDelegate.swift; sourceTree = "<group>"; };
+		A0FDB89FA99136E1FABC1D50AE409FD2 /* PagingFiniteDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingFiniteDataSource.swift; path = Parchment/Classes/PagingFiniteDataSource.swift; sourceTree = "<group>"; };
+		A69D060B6ECD7FED9DE4F3974E181620 /* Parchment-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Parchment-Info.plist"; sourceTree = "<group>"; };
+		A7C612878DA21BC3A5E5650C0B4B0E34 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AB2C8CC34C848BDCA787E689F6857E65 /* Pods-HPParallaxHeader_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HPParallaxHeader_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		AB37E6C2FDB18E3D0DCA0F920ACFF015 /* HPParallaxHeader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HPParallaxHeader.debug.xcconfig; sourceTree = "<group>"; };
+		ABD576C07639537AA66A756EAEB24670 /* PagingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingOptions.swift; path = Parchment/Classes/PagingOptions.swift; sourceTree = "<group>"; };
+		AC5A2DE8EEF2216639DE07B19458A7EA /* Pods-HPParallaxHeader_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HPParallaxHeader_Example-frameworks.sh"; sourceTree = "<group>"; };
+		ADE3731E5C8AD3DC24AA9B925C29C909 /* HPParallaxHeader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HPParallaxHeader.release.xcconfig; sourceTree = "<group>"; };
+		AE31732B43E31B1A7B3CEF633994AA1D /* PagingMenuItemSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuItemSize.swift; path = Parchment/Enums/PagingMenuItemSize.swift; sourceTree = "<group>"; };
+		AF553B6CDE8F3DB4AE164C3D081E8918 /* Pods-HPParallaxHeader_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HPParallaxHeader_Example-umbrella.h"; sourceTree = "<group>"; };
+		AF7C169FE93867936EF3DCD732355AFD /* Pods-HPParallaxHeader_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HPParallaxHeader_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B09E7196277E4203BAC73F9551C46DCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B3D44C25FEF6A9CE925FA79F9ED3CE47 /* Parchment-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parchment-prefix.pch"; sourceTree = "<group>"; };
+		B5442DC488E34A7ABC7A307E1FA08EB7 /* InvalidationState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InvalidationState.swift; path = Parchment/Enums/InvalidationState.swift; sourceTree = "<group>"; };
+		B5B8CC401ADA1CB1CBC1D074167109B1 /* PagingCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingCollectionViewLayout.swift; path = Parchment/Classes/PagingCollectionViewLayout.swift; sourceTree = "<group>"; };
+		BCEBF6303D26EE98653B93DCFFE08001 /* PagingMenuDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuDataSource.swift; path = Parchment/Protocols/PagingMenuDataSource.swift; sourceTree = "<group>"; };
+		BDD18ACB625B597CC06D7006C44D7FE5 /* Parchment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Parchment.framework; path = Parchment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4544D18089A3853EF73A7FEEF536745 /* HPParallaxHeader.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HPParallaxHeader.modulemap; sourceTree = "<group>"; };
+		C4A7C47D48B10A0A731701C4DA4EF87B /* PagingItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingItems.swift; path = Parchment/Structs/PagingItems.swift; sourceTree = "<group>"; };
+		C649C2B3BB1B6B9B23D81BB0D843D61C /* Pods_HPParallaxHeader_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HPParallaxHeader_Example.framework; path = "Pods-HPParallaxHeader_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C67FFD6CCF394D5BDECD33A299597AC6 /* PagingIndicatorLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingIndicatorLayoutAttributes.swift; path = Parchment/Classes/PagingIndicatorLayoutAttributes.swift; sourceTree = "<group>"; };
+		C7FAE3665E050A05B0A3A82055C2713E /* Pods-HPParallaxHeader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HPParallaxHeader_Example.release.xcconfig"; sourceTree = "<group>"; };
+		CB3CBD74A3619C14E36E884CFAD6F021 /* PageViewDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewDirection.swift; path = Parchment/Enums/PageViewDirection.swift; sourceTree = "<group>"; };
+		CCD72C1523B5883A003608B6E72C5A41 /* PageViewManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewManager.swift; path = Parchment/Classes/PageViewManager.swift; sourceTree = "<group>"; };
+		CE343255C0A52166F5E51548399C474A /* PagingViewControllerSizeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingViewControllerSizeDelegate.swift; path = Parchment/Protocols/PagingViewControllerSizeDelegate.swift; sourceTree = "<group>"; };
+		D259A249E4882431A4BEE76B47919CB3 /* PagingMenuItemSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuItemSource.swift; path = Parchment/Enums/PagingMenuItemSource.swift; sourceTree = "<group>"; };
+		D344414014FCFE0F56C1D9158C036920 /* Pods-HPParallaxHeader_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HPParallaxHeader_Tests-dummy.m"; sourceTree = "<group>"; };
+		D500B68A829A82E3A7658E2F123BC4E0 /* HPParallaxHeader-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HPParallaxHeader-prefix.pch"; sourceTree = "<group>"; };
+		D5283B6EA97B391E097C43C672A42DAB /* PagingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingView.swift; path = Parchment/Classes/PagingView.swift; sourceTree = "<group>"; };
+		D6CFFD34BAEA7CA4A958364F8B632D8F /* PagingDiff.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingDiff.swift; path = Parchment/Structs/PagingDiff.swift; sourceTree = "<group>"; };
+		DB54CFB8404E3753E8C2524CCFB9D9EA /* Parchment-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Parchment-umbrella.h"; sourceTree = "<group>"; };
+		E454791DDC5D7B74ECBE01B4778003C3 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIEdgeInsets.swift; path = Parchment/Extensions/UIEdgeInsets.swift; sourceTree = "<group>"; };
+		E4DA9C6E3815BC3892F5FA13535637BE /* Pods-HPParallaxHeader_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HPParallaxHeader_Example-Info.plist"; sourceTree = "<group>"; };
+		EA345A696D09E9C61A6C6A2952A270DF /* Pods-HPParallaxHeader_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HPParallaxHeader_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		EA569EF4C9D5173FD4BD6A2B1C6B7284 /* Pods-HPParallaxHeader_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HPParallaxHeader_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EBE71314F34F777E52A67A3AEE79AAB8 /* PagingBorderOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingBorderOptions.swift; path = Parchment/Enums/PagingBorderOptions.swift; sourceTree = "<group>"; };
+		EE1F757FBC906BFF17BE904D6B8A1B2B /* PagingMenuDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingMenuDelegate.swift; path = Parchment/Protocols/PagingMenuDelegate.swift; sourceTree = "<group>"; };
+		F37CED1E2FF0B060282CEDBCD8AC62F1 /* PagingIndicatorOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingIndicatorOptions.swift; path = Parchment/Enums/PagingIndicatorOptions.swift; sourceTree = "<group>"; };
+		F3A70937E463A4DB5D584533E18C5151 /* PagingTitleCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingTitleCell.swift; path = Parchment/Classes/PagingTitleCell.swift; sourceTree = "<group>"; };
+		F3EEE6FE12C69202C9D143956C6B54CC /* HPParallaxView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HPParallaxView.swift; path = HPParallaxHeader/Classes/HPParallaxView.swift; sourceTree = "<group>"; };
+		F59F870A8E529A69D19C8ED82BEB05BA /* Parchment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Parchment.debug.xcconfig; sourceTree = "<group>"; };
+		F67AEAF30DDC063CCA0D65F8081EDFB9 /* PagingItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingItem.swift; path = Parchment/Protocols/PagingItem.swift; sourceTree = "<group>"; };
+		F6AD3FD97CF343384AF58E2828CB2E6F /* PagingViewControllerInfiniteDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingViewControllerInfiniteDataSource.swift; path = Parchment/Protocols/PagingViewControllerInfiniteDataSource.swift; sourceTree = "<group>"; };
+		F78E153502D054B396CED75D667A3E51 /* Pods-HPParallaxHeader_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HPParallaxHeader_Example.modulemap"; sourceTree = "<group>"; };
+		FC847C9EA0709B3A549CF0238FB78233 /* PageViewManagerDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewManagerDataSource.swift; path = Parchment/Protocols/PageViewManagerDataSource.swift; sourceTree = "<group>"; };
+		FCDA3E302BE9E26D10950D4DDA03F76C /* PagingBorderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PagingBorderView.swift; path = Parchment/Classes/PagingBorderView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35EC3BA10C563AE78C8CF7BED6C94AB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC2DEA430D36C51DF5F61751EDEAEED8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B70ED85306FC0222ED233D8F66125AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526E745520215F0987FF895FE0F4546A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E29BC0C4ECC10AA03CC8D976733C01E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1981C431BC612FCD093924BA16ABB7E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F42702E1AA4EAD586530CCD7831BF789 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FAD2F79F93DE8966DAD754F56D76C2F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42B9C26C73378513B72C421354D9028D /* Pods-HPParallaxHeader_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7D074FB52605415B0DA4E7099F907900 /* Pods-HPParallaxHeader_Tests.modulemap */,
+				EA569EF4C9D5173FD4BD6A2B1C6B7284 /* Pods-HPParallaxHeader_Tests-acknowledgements.markdown */,
+				3DC7DEED68419B1389D3F1EEA6456896 /* Pods-HPParallaxHeader_Tests-acknowledgements.plist */,
+				D344414014FCFE0F56C1D9158C036920 /* Pods-HPParallaxHeader_Tests-dummy.m */,
+				8661C5BE90EE15B43BEECE193EAA3D3D /* Pods-HPParallaxHeader_Tests-Info.plist */,
+				137B06EF9B6C94B3EF3F5B56449AB32B /* Pods-HPParallaxHeader_Tests-umbrella.h */,
+				5EA8D7D57DF68527F1930E66F7CED2EC /* Pods-HPParallaxHeader_Tests.debug.xcconfig */,
+				EA345A696D09E9C61A6C6A2952A270DF /* Pods-HPParallaxHeader_Tests.release.xcconfig */,
+			);
+			name = "Pods-HPParallaxHeader_Tests";
+			path = "Target Support Files/Pods-HPParallaxHeader_Tests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5C6B63F2439370375AEBF908EF54DCF9 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				930AD291DC10BCD6D5B17AC0167E2CD7 /* Pods-HPParallaxHeader_Example */,
+				42B9C26C73378513B72C421354D9028D /* Pods-HPParallaxHeader_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		89B3693D361D5DEDB5B07A9E7C155B94 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0EF82E302D195D8E96617EED577F3FA /* HPParallaxHeader */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		8A1517D169ACBE819FF642DF80CE865E /* Parchment */ = {
+			isa = PBXGroup;
+			children = (
+				5682599E4DCFE2926F152713A8F0BDC8 /* AnyPagingItem.swift */,
+				1576EBAFDE2E167BA47F285CCA58289F /* CollectionView.swift */,
+				B5442DC488E34A7ABC7A307E1FA08EB7 /* InvalidationState.swift */,
+				3A1F7A7D531BA635F50622EC755458E1 /* PageView.swift */,
+				6DFB163A5FDCE084635237B955EB64C5 /* PageViewController.swift */,
+				72E65123BF4B4A4EEA8B9F1845B6E5AB /* PageViewControllerDataSource.swift */,
+				9FE3B00E88DBCE745B77DACCEE9C85E9 /* PageViewControllerDelegate.swift */,
+				CB3CBD74A3619C14E36E884CFAD6F021 /* PageViewDirection.swift */,
+				CCD72C1523B5883A003608B6E72C5A41 /* PageViewManager.swift */,
+				FC847C9EA0709B3A549CF0238FB78233 /* PageViewManagerDataSource.swift */,
+				19A47C65ED54798FD3FD097332C1494E /* PageViewManagerDelegate.swift */,
+				3C0B72C2C3B8A3BCF441DA0B236A0172 /* PageViewState.swift */,
+				97B0D3493E2BA4495F07FD1DDB95CE48 /* PagingBorderLayoutAttributes.swift */,
+				EBE71314F34F777E52A67A3AEE79AAB8 /* PagingBorderOptions.swift */,
+				FCDA3E302BE9E26D10950D4DDA03F76C /* PagingBorderView.swift */,
+				53F406F144B9FB900F9F737E177312DD /* PagingCell.swift */,
+				7A3BE0803C3F716D1162CDF031AC413E /* PagingCellLayoutAttributes.swift */,
+				042D5534D4166006B56047E4F6FF9E63 /* PagingCellViewModel.swift */,
+				B5B8CC401ADA1CB1CBC1D074167109B1 /* PagingCollectionViewLayout.swift */,
+				83D8BEE4001FCFE482359431E0967F62 /* PagingContentInteraction.swift */,
+				6BA4444D549906E17B662BC3E8CBC52C /* PagingController.swift */,
+				D6CFFD34BAEA7CA4A958364F8B632D8F /* PagingDiff.swift */,
+				50743F24EED988AAF5966F334FB1E61F /* PagingDirection.swift */,
+				57272C95A6EFF02820101272C6E26810 /* PagingDistance.swift */,
+				A0FDB89FA99136E1FABC1D50AE409FD2 /* PagingFiniteDataSource.swift */,
+				861F42FB6941CF9ADADDD8F65DBF83D6 /* PagingIndexItem.swift */,
+				C67FFD6CCF394D5BDECD33A299597AC6 /* PagingIndicatorLayoutAttributes.swift */,
+				172B5FFC665923C3E130F3152ABD6786 /* PagingIndicatorMetric.swift */,
+				F37CED1E2FF0B060282CEDBCD8AC62F1 /* PagingIndicatorOptions.swift */,
+				4DABBBF3A40557FBDEAD4C87FED66CDC /* PagingIndicatorView.swift */,
+				5A46DA7F20FCAA5247E508C998C5B98E /* PagingInvalidationContext.swift */,
+				F67AEAF30DDC063CCA0D65F8081EDFB9 /* PagingItem.swift */,
+				C4A7C47D48B10A0A731701C4DA4EF87B /* PagingItems.swift */,
+				27EE9549F4FA551E05409F0C4C1A4747 /* PagingLayout.swift */,
+				BCEBF6303D26EE98653B93DCFFE08001 /* PagingMenuDataSource.swift */,
+				EE1F757FBC906BFF17BE904D6B8A1B2B /* PagingMenuDelegate.swift */,
+				5D27D6BE7EA517D392FA998983B7F66E /* PagingMenuHorizontalAlignment.swift */,
+				75C4A5BAF8FEADDF926CF126837AD86C /* PagingMenuInteraction.swift */,
+				AE31732B43E31B1A7B3CEF633994AA1D /* PagingMenuItemSize.swift */,
+				D259A249E4882431A4BEE76B47919CB3 /* PagingMenuItemSource.swift */,
+				0746CEC6491E5B4EAF33FD7BF91A8CD1 /* PagingMenuPosition.swift */,
+				08AFAC1CA9263FE7CEC2251E951D447C /* PagingMenuTransition.swift */,
+				2DB5D4B45FDAA0B60F233EF9FE2F4963 /* PagingMenuView.swift */,
+				8ADA3E8049D24283277EF65DD24ABFCA /* PagingNavigationOrientation.swift */,
+				ABD576C07639537AA66A756EAEB24670 /* PagingOptions.swift */,
+				10626FBEE980C327EBDC9371B89ECDFE /* PagingSelectedScrollPosition.swift */,
+				48A7A57F4EB813052A6B3A0F6EFF9A3C /* PagingSizeCache.swift */,
+				809925925F678AFD4466AF4316E26EDA /* PagingState.swift */,
+				547AE7447DAD8701027B3AA9BF6D8252 /* PagingStaticDataSource.swift */,
+				F3A70937E463A4DB5D584533E18C5151 /* PagingTitleCell.swift */,
+				07CB80E9FEE0B2013B4B2A4846CE3A6D /* PagingTransition.swift */,
+				D5283B6EA97B391E097C43C672A42DAB /* PagingView.swift */,
+				98E875D0ACA882DA3907F4864FFE6EFC /* PagingViewController.swift */,
+				5CD27A0BA0ACEB0D2517B46719AD949F /* PagingViewControllerDataSource.swift */,
+				80FEC61E89F6FB90DAFC14D9E84AA282 /* PagingViewControllerDelegate.swift */,
+				F6AD3FD97CF343384AF58E2828CB2E6F /* PagingViewControllerInfiniteDataSource.swift */,
+				CE343255C0A52166F5E51548399C474A /* PagingViewControllerSizeDelegate.swift */,
+				8F77DCA889F4C882EAEFA4B14CF1B926 /* Tween.swift */,
+				0F838EC00EE8F5A563B0D7E5E22EF296 /* UIColor+interpolation.swift */,
+				E454791DDC5D7B74ECBE01B4778003C3 /* UIEdgeInsets.swift */,
+				4AA58A704773C0DF26C40B3E8F46AA53 /* UIView+constraints.swift */,
+				E443957EBD6A9A2C6721CF4C0898307B /* Support Files */,
+			);
+			name = Parchment;
+			path = Parchment;
+			sourceTree = "<group>";
+		};
+		930AD291DC10BCD6D5B17AC0167E2CD7 /* Pods-HPParallaxHeader_Example */ = {
+			isa = PBXGroup;
+			children = (
+				F78E153502D054B396CED75D667A3E51 /* Pods-HPParallaxHeader_Example.modulemap */,
+				AF7C169FE93867936EF3DCD732355AFD /* Pods-HPParallaxHeader_Example-acknowledgements.markdown */,
+				AB2C8CC34C848BDCA787E689F6857E65 /* Pods-HPParallaxHeader_Example-acknowledgements.plist */,
+				0362CE63C4955CB79E5A9B231DD70FD7 /* Pods-HPParallaxHeader_Example-dummy.m */,
+				AC5A2DE8EEF2216639DE07B19458A7EA /* Pods-HPParallaxHeader_Example-frameworks.sh */,
+				E4DA9C6E3815BC3892F5FA13535637BE /* Pods-HPParallaxHeader_Example-Info.plist */,
+				AF553B6CDE8F3DB4AE164C3D081E8918 /* Pods-HPParallaxHeader_Example-umbrella.h */,
+				558DC9D7AACA2CC63F9A5275FD2B02CD /* Pods-HPParallaxHeader_Example.debug.xcconfig */,
+				C7FAE3665E050A05B0A3A82055C2713E /* Pods-HPParallaxHeader_Example.release.xcconfig */,
+			);
+			name = "Pods-HPParallaxHeader_Example";
+			path = "Target Support Files/Pods-HPParallaxHeader_Example";
+			sourceTree = "<group>";
+		};
+		B0EF82E302D195D8E96617EED577F3FA /* HPParallaxHeader */ = {
+			isa = PBXGroup;
+			children = (
+				335D795AD297DF774997824B96390F7A /* HPParallaxHeader.swift */,
+				F3EEE6FE12C69202C9D143956C6B54CC /* HPParallaxView.swift */,
+				12EEC68CB8F32644D2FDE1C2FF9F256B /* HPScrollView.swift */,
+				458C3CF3ACE4EE785109A652D1FD5971 /* HPScrollViewController.swift */,
+				05AC7028EE722EFAA6E76740847076C6 /* HPScrollViewDelegateForwarder.swift */,
+				932C6E4A096CAA72BB7EC82F85962CF5 /* UIScrollView+ParallaxHeader.swift */,
+				DEBAC031F3B31D6CCC43042F3B19B819 /* Pod */,
+				C0D316DF8A221FF94FF7789011EA3489 /* Support Files */,
+			);
+			name = HPParallaxHeader;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BCB91194D5DF1302333F4EC5B882D4B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A1517D169ACBE819FF642DF80CE865E /* Parchment */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0D316DF8A221FF94FF7789011EA3489 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4544D18089A3853EF73A7FEEF536745 /* HPParallaxHeader.modulemap */,
+				6B0D6FE7769E5BB384D61C245FB8149E /* HPParallaxHeader-dummy.m */,
+				227C87BA15DD73F2F41827E6993BCE61 /* HPParallaxHeader-Info.plist */,
+				D500B68A829A82E3A7658E2F123BC4E0 /* HPParallaxHeader-prefix.pch */,
+				70CD3E447566FED76D1AC51ADD620B63 /* HPParallaxHeader-umbrella.h */,
+				AB37E6C2FDB18E3D0DCA0F920ACFF015 /* HPParallaxHeader.debug.xcconfig */,
+				ADE3731E5C8AD3DC24AA9B925C29C909 /* HPParallaxHeader.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/HPParallaxHeader";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				89B3693D361D5DEDB5B07A9E7C155B94 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				BCB91194D5DF1302333F4EC5B882D4B9 /* Pods */,
+				FABCAD1A1D445EC5AA4DA70F31407F5A /* Products */,
+				5C6B63F2439370375AEBF908EF54DCF9 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEBAC031F3B31D6CCC43042F3B19B819 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				97AD94F43AD55B9B42B907C8D1F356F1 /* HPParallaxHeader.podspec */,
+				A7C612878DA21BC3A5E5650C0B4B0E34 /* LICENSE */,
+				B09E7196277E4203BAC73F9551C46DCD /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		E443957EBD6A9A2C6721CF4C0898307B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63A797E43F8295C6ABA8D4B269EFFED7 /* Parchment.modulemap */,
+				351B368BC286948262D43D4EE76AF93C /* Parchment-dummy.m */,
+				A69D060B6ECD7FED9DE4F3974E181620 /* Parchment-Info.plist */,
+				B3D44C25FEF6A9CE925FA79F9ED3CE47 /* Parchment-prefix.pch */,
+				DB54CFB8404E3753E8C2524CCFB9D9EA /* Parchment-umbrella.h */,
+				F59F870A8E529A69D19C8ED82BEB05BA /* Parchment.debug.xcconfig */,
+				5FE8064AAA5F8B30DEC32E5F30862B64 /* Parchment.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Parchment";
+			sourceTree = "<group>";
+		};
+		FABCAD1A1D445EC5AA4DA70F31407F5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F7FAF33DDE36CDDBCC1AC58CC3CFDF8 /* HPParallaxHeader.framework */,
+				BDD18ACB625B597CC06D7006C44D7FE5 /* Parchment.framework */,
+				C649C2B3BB1B6B9B23D81BB0D843D61C /* Pods_HPParallaxHeader_Example.framework */,
+				6EE2012C7BA5D98AE2C7D630E19053AB /* Pods_HPParallaxHeader_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1DB6B96258B97285105E06B989B3B033 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				270D1E2780BDD2DA90B69E5537E89A37 /* Pods-HPParallaxHeader_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B16A88D0EF769A89F464B04518DA0119 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE884EC6413E142574AA7F99AD126F9 /* HPParallaxHeader-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D93213F5ED76ED95C9D4924B86529820 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E8FF4FA576BC45DEA5D1ECC1468F90D /* Parchment-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E923CFF11894F468052274C12E0BC41C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB7885EE242917864CB193300A523B8D /* Pods-HPParallaxHeader_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		18184DEEDE7075D999122505659B55E9 /* Parchment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D602925E062AC75DB347A11F43BBD3 /* Build configuration list for PBXNativeTarget "Parchment" */;
+			buildPhases = (
+				D93213F5ED76ED95C9D4924B86529820 /* Headers */,
+				24F9775205AF6C838AFD87A45289AC1F /* Sources */,
+				35EC3BA10C563AE78C8CF7BED6C94AB3 /* Frameworks */,
+				50F5D3CD83CB5EB2287F9C9363312913 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Parchment;
+			productName = Parchment;
+			productReference = BDD18ACB625B597CC06D7006C44D7FE5 /* Parchment.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		36BA4D1C0A680796B9F13C0EF485D875 /* HPParallaxHeader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A2B6CF48F73B9C8014D7F929C9A42F1 /* Build configuration list for PBXNativeTarget "HPParallaxHeader" */;
+			buildPhases = (
+				B16A88D0EF769A89F464B04518DA0119 /* Headers */,
+				F43E3C66A2F07DF54C2E1728AF6A47C9 /* Sources */,
+				6B70ED85306FC0222ED233D8F66125AD /* Frameworks */,
+				C4F0C50C6877CF231A567E714B849C56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HPParallaxHeader;
+			productName = HPParallaxHeader;
+			productReference = 7F7FAF33DDE36CDDBCC1AC58CC3CFDF8 /* HPParallaxHeader.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4C54D54BFEF34CCC7F6487C566C3FDE3 /* Pods-HPParallaxHeader_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5233C146681571BD643A9C97D41D4AAF /* Build configuration list for PBXNativeTarget "Pods-HPParallaxHeader_Example" */;
+			buildPhases = (
+				E923CFF11894F468052274C12E0BC41C /* Headers */,
+				48A5A1B9D1DF91633F11900A260007C6 /* Sources */,
+				F42702E1AA4EAD586530CCD7831BF789 /* Frameworks */,
+				DA9932E6BB449441CA383C376E76817F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFF67DA7E8EE6B68838BF1B4CF3A274E /* PBXTargetDependency */,
+				B57EB9B9B4357E977312B6E26402FB77 /* PBXTargetDependency */,
+			);
+			name = "Pods-HPParallaxHeader_Example";
+			productName = "Pods-HPParallaxHeader_Example";
+			productReference = C649C2B3BB1B6B9B23D81BB0D843D61C /* Pods_HPParallaxHeader_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		84AFE6F2F504B324B0C250760C1F3E5B /* Pods-HPParallaxHeader_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1876C2C7BBBA1C86979F3F90945C97A4 /* Build configuration list for PBXNativeTarget "Pods-HPParallaxHeader_Tests" */;
+			buildPhases = (
+				1DB6B96258B97285105E06B989B3B033 /* Headers */,
+				74E641B45735D933F51A79DA20D5E770 /* Sources */,
+				E29BC0C4ECC10AA03CC8D976733C01E1 /* Frameworks */,
+				4F7B22A294A9B96DAFECBEEC3BD4DA22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F871FAC5B6B1EA5B4374002F57E3D43 /* PBXTargetDependency */,
+			);
+			name = "Pods-HPParallaxHeader_Tests";
+			productName = "Pods-HPParallaxHeader_Tests";
+			productReference = 6EE2012C7BA5D98AE2C7D630E19053AB /* Pods_HPParallaxHeader_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = FABCAD1A1D445EC5AA4DA70F31407F5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36BA4D1C0A680796B9F13C0EF485D875 /* HPParallaxHeader */,
+				18184DEEDE7075D999122505659B55E9 /* Parchment */,
+				4C54D54BFEF34CCC7F6487C566C3FDE3 /* Pods-HPParallaxHeader_Example */,
+				84AFE6F2F504B324B0C250760C1F3E5B /* Pods-HPParallaxHeader_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F7B22A294A9B96DAFECBEEC3BD4DA22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50F5D3CD83CB5EB2287F9C9363312913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4F0C50C6877CF231A567E714B849C56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA9932E6BB449441CA383C376E76817F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24F9775205AF6C838AFD87A45289AC1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D522192095B03BB121AF781BF544DAE /* AnyPagingItem.swift in Sources */,
+				45BE4348708F7D21D48F8A31D8F0DCC0 /* CollectionView.swift in Sources */,
+				327DA2CE5D9475F8812418C436DC92BD /* InvalidationState.swift in Sources */,
+				9C3D77F17E713775E48674441FB65A05 /* PageView.swift in Sources */,
+				6B2EBAB6DD41A4B60C440537A2F71ADA /* PageViewController.swift in Sources */,
+				6D1B32FA2067DF05B85CA6BC76A7055A /* PageViewControllerDataSource.swift in Sources */,
+				A9AAF2C56A27D4ADF9A421536E4700DF /* PageViewControllerDelegate.swift in Sources */,
+				6A504186E13C622D382A945DD86BECD5 /* PageViewDirection.swift in Sources */,
+				E435FA73C7AB697A75937B10F5A8BFF3 /* PageViewManager.swift in Sources */,
+				C236B7B8C1F8DC1760E55B637729D771 /* PageViewManagerDataSource.swift in Sources */,
+				A4C384CF78CF2D00DE64B72423FA51E7 /* PageViewManagerDelegate.swift in Sources */,
+				40854120870D906DA9CF9F6818C2A586 /* PageViewState.swift in Sources */,
+				1E1C37505C8FF000DCB67CEC45E1E737 /* PagingBorderLayoutAttributes.swift in Sources */,
+				ED517FEB751D53D8A821111B7254A925 /* PagingBorderOptions.swift in Sources */,
+				5AAEE2A5860ADF1F54CDC8015F376FB9 /* PagingBorderView.swift in Sources */,
+				3EA2F0041BAB7D2EA90C296B7B601D87 /* PagingCell.swift in Sources */,
+				845096CC57E982CD0D6A320449F2B3AF /* PagingCellLayoutAttributes.swift in Sources */,
+				C5D3863B12FBF0BFA4E297DC6249359F /* PagingCellViewModel.swift in Sources */,
+				F53DC785A913556433B964C543C86C5B /* PagingCollectionViewLayout.swift in Sources */,
+				46FB514B552478DCA59FA9AD56CFEB19 /* PagingContentInteraction.swift in Sources */,
+				833A2DCD78A668EAF2E6ECEA9BE7DF24 /* PagingController.swift in Sources */,
+				396D5E703627889AB9CC5A2252B4698D /* PagingDiff.swift in Sources */,
+				89E3692009842C0B79E06FB70889A88D /* PagingDirection.swift in Sources */,
+				2C9366A1B9EE92BAA7E4D62289177108 /* PagingDistance.swift in Sources */,
+				3D0122ACEA29BEF6FEF51A7748766213 /* PagingFiniteDataSource.swift in Sources */,
+				B7683EE1BD68E797E42A14A4E24A8B78 /* PagingIndexItem.swift in Sources */,
+				2640033B8342C4EC45E5F911B09D1D3A /* PagingIndicatorLayoutAttributes.swift in Sources */,
+				F2CF6AB02C2972418370FF8694FF763A /* PagingIndicatorMetric.swift in Sources */,
+				E1F0B990BB5F9B7239558E87B70A7F77 /* PagingIndicatorOptions.swift in Sources */,
+				9BB6D46693C1C564150AF319444042A5 /* PagingIndicatorView.swift in Sources */,
+				1742AC1E130AE352E5C78BBEB8599125 /* PagingInvalidationContext.swift in Sources */,
+				1B843F78A849AE99A03F29AFB129C0F9 /* PagingItem.swift in Sources */,
+				5CA6CC19DB976254ADB250213FE04C48 /* PagingItems.swift in Sources */,
+				384B93C6E72755BE0A7ED831EDC2EA55 /* PagingLayout.swift in Sources */,
+				576B418F3E22442F549991C4D87A767F /* PagingMenuDataSource.swift in Sources */,
+				1D1AD4E1E8D137808A1DBF14E871AAEA /* PagingMenuDelegate.swift in Sources */,
+				91F5DA701389462310FF1F343BC6822E /* PagingMenuHorizontalAlignment.swift in Sources */,
+				AC1700C0CAEBA26E5178076E84E5AFE8 /* PagingMenuInteraction.swift in Sources */,
+				7719B56A201A45735B8A51C9399C6AD7 /* PagingMenuItemSize.swift in Sources */,
+				FCEA5B6CF52DF4436A100E83A35B5254 /* PagingMenuItemSource.swift in Sources */,
+				E93134BBBE06146958073C93087703D0 /* PagingMenuPosition.swift in Sources */,
+				C892F4BD4795C624582FF290E3858254 /* PagingMenuTransition.swift in Sources */,
+				ABB815F3ABE8FFF39F90212D18991BF2 /* PagingMenuView.swift in Sources */,
+				EAF8E5CBB6507D7C2FC2B09C135D470A /* PagingNavigationOrientation.swift in Sources */,
+				BED2871609E32CE5BE41CD7111333798 /* PagingOptions.swift in Sources */,
+				22C25BE09A377A4A3DEFAECA7EBE6929 /* PagingSelectedScrollPosition.swift in Sources */,
+				181E15A274F2D6A161DEBEF9D174C00F /* PagingSizeCache.swift in Sources */,
+				109F659C029172AF837165B1C272BAAC /* PagingState.swift in Sources */,
+				A7EC2CD87B33FCE32907E079BFA797CA /* PagingStaticDataSource.swift in Sources */,
+				DF080916B7B4250E9DE4227B3E19A4EE /* PagingTitleCell.swift in Sources */,
+				2E8A1B4FD6AA6812F3C5E323B15381FE /* PagingTransition.swift in Sources */,
+				3B27CF29BC8C2A47E3F760927C724656 /* PagingView.swift in Sources */,
+				C6D675F08463AC45AC7F36525A09BA95 /* PagingViewController.swift in Sources */,
+				58497C193F64EAE7E1E3D298F2B6DA0C /* PagingViewControllerDataSource.swift in Sources */,
+				C4BB9BCEC4438A6928C34A4924A4FFC5 /* PagingViewControllerDelegate.swift in Sources */,
+				D3DE98DBBD84876658D174421E548F62 /* PagingViewControllerInfiniteDataSource.swift in Sources */,
+				2A56D138D623A33A078470508C5877FF /* PagingViewControllerSizeDelegate.swift in Sources */,
+				A2511C9A5374FEFE25D210147AE5BAA8 /* Parchment-dummy.m in Sources */,
+				BD47077E487BE1EF196B96535DB51CCD /* Tween.swift in Sources */,
+				37AFF0400220F4ED6E06779C16F0E11C /* UIColor+interpolation.swift in Sources */,
+				52C936D4F8E82594AB2D9DCCF115ACE2 /* UIEdgeInsets.swift in Sources */,
+				E04079DB74A408A5F5A625DCFCFB9EBC /* UIView+constraints.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48A5A1B9D1DF91633F11900A260007C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07C51E40D4181845725811DA42D8EA80 /* Pods-HPParallaxHeader_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74E641B45735D933F51A79DA20D5E770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A1881917EF30A9AEE4A4810A7681E21 /* Pods-HPParallaxHeader_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F43E3C66A2F07DF54C2E1728AF6A47C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98AA55E683BECEC5A2F0A05E44D82E2 /* HPParallaxHeader-dummy.m in Sources */,
+				BFC6E89FBE3312FDEEE4A6CD062B87AA /* HPParallaxHeader.swift in Sources */,
+				94DA4FD9C49C34E5C3C7B6C983E93DAB /* HPParallaxView.swift in Sources */,
+				0F4C18B31A4EEC051F535C1C3E52E4DC /* HPScrollView.swift in Sources */,
+				DE837117E59395D275813F94A34A1308 /* HPScrollViewController.swift in Sources */,
+				3BC0FD85AEADC327CFABDB22D36372CE /* HPScrollViewDelegateForwarder.swift in Sources */,
+				08F27084CEC7F6214888E0730474EA7C /* UIScrollView+ParallaxHeader.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F871FAC5B6B1EA5B4374002F57E3D43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-HPParallaxHeader_Example";
+			target = 4C54D54BFEF34CCC7F6487C566C3FDE3 /* Pods-HPParallaxHeader_Example */;
+			targetProxy = 803F8A376E8508B610530C59FCC97379 /* PBXContainerItemProxy */;
+		};
+		B57EB9B9B4357E977312B6E26402FB77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Parchment;
+			target = 18184DEEDE7075D999122505659B55E9 /* Parchment */;
+			targetProxy = 0011D3C48AB3EC8B3E8A763768165C8D /* PBXContainerItemProxy */;
+		};
+		EFF67DA7E8EE6B68838BF1B4CF3A274E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HPParallaxHeader;
+			target = 36BA4D1C0A680796B9F13C0EF485D875 /* HPParallaxHeader */;
+			targetProxy = 28B915AA790FCA15FE0C3D6CF2E1AF10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0152192F5874A36F66CD3C24B39F3A50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE3731E5C8AD3DC24AA9B925C29C909 /* HPParallaxHeader.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HPParallaxHeader/HPParallaxHeader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HPParallaxHeader/HPParallaxHeader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HPParallaxHeader/HPParallaxHeader.modulemap";
+				PRODUCT_MODULE_NAME = HPParallaxHeader;
+				PRODUCT_NAME = HPParallaxHeader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		24E937D0AA5214378B8B41F7297DB6B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7FAE3665E050A05B0A3A82055C2713E /* Pods-HPParallaxHeader_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		350954CDE9DD5BB7C5C416FE2FA4F859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB37E6C2FDB18E3D0DCA0F920ACFF015 /* HPParallaxHeader.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HPParallaxHeader/HPParallaxHeader-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HPParallaxHeader/HPParallaxHeader-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HPParallaxHeader/HPParallaxHeader.modulemap";
+				PRODUCT_MODULE_NAME = HPParallaxHeader;
+				PRODUCT_NAME = HPParallaxHeader;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		81A2B663FD8BE2A244364E328D9D468D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FE8064AAA5F8B30DEC32E5F30862B64 /* Parchment.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Parchment/Parchment-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Parchment/Parchment-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Parchment/Parchment.modulemap";
+				PRODUCT_MODULE_NAME = Parchment;
+				PRODUCT_NAME = Parchment;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		81E17A21F28DAA066A4E2351DA09CA96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EA8D7D57DF68527F1930E66F7CED2EC /* Pods-HPParallaxHeader_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HPParallaxHeader_Tests/Pods-HPParallaxHeader_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HPParallaxHeader_Tests/Pods-HPParallaxHeader_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE7998604601ED2A7836D74643BA62A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 558DC9D7AACA2CC63F9A5275FD2B02CD /* Pods-HPParallaxHeader_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B6E5008A3218F2AD889EB30BD8E0F0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F59F870A8E529A69D19C8ED82BEB05BA /* Parchment.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Parchment/Parchment-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Parchment/Parchment-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Parchment/Parchment.modulemap";
+				PRODUCT_MODULE_NAME = Parchment;
+				PRODUCT_NAME = Parchment;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E67EC18BFE4FD36E0BFAD39E2C90CE84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA345A696D09E9C61A6C6A2952A270DF /* Pods-HPParallaxHeader_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-HPParallaxHeader_Tests/Pods-HPParallaxHeader_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HPParallaxHeader_Tests/Pods-HPParallaxHeader_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17D602925E062AC75DB347A11F43BBD3 /* Build configuration list for PBXNativeTarget "Parchment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6E5008A3218F2AD889EB30BD8E0F0CC /* Debug */,
+				81A2B663FD8BE2A244364E328D9D468D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1876C2C7BBBA1C86979F3F90945C97A4 /* Build configuration list for PBXNativeTarget "Pods-HPParallaxHeader_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81E17A21F28DAA066A4E2351DA09CA96 /* Debug */,
+				E67EC18BFE4FD36E0BFAD39E2C90CE84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A2B6CF48F73B9C8014D7F929C9A42F1 /* Build configuration list for PBXNativeTarget "HPParallaxHeader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				350954CDE9DD5BB7C5C416FE2FA4F859 /* Debug */,
+				0152192F5874A36F66CD3C24B39F3A50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5233C146681571BD643A9C97D41D4AAF /* Build configuration list for PBXNativeTarget "Pods-HPParallaxHeader_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE7998604601ED2A7836D74643BA62A0 /* Debug */,
+				24E937D0AA5214378B8B41F7297DB6B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

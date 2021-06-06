@@ -10,19 +10,19 @@
 		0E46870B26591CFE00804379 /* UIScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4687052658F3A700804379 /* UIScrollViewExample.swift */; };
 		0E4FEA472662821000EFDF0F /* ParchmentExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FEA462662821000EFDF0F /* ParchmentExampleViewController.swift */; };
 		0E4FEA492662828400EFDF0F /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FEA482662828400EFDF0F /* ContentViewController.swift */; };
-		0E4FEA4B266283C900EFDF0F /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FEA4A266283C900EFDF0F /* UIView+constraints.swift */; };
 		0E4FEA4D2662863100EFDF0F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FEA4C2662863100EFDF0F /* TableViewController.swift */; };
+		0E7234092665F5A900134D4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E7234072665F5A900134D4E /* LaunchScreen.storyboard */; };
+		0E8422A3266D01BB0010994A /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4FEA4A266283C900EFDF0F /* UIView+constraints.swift */; };
 		0E8714CF2657BD5800327BD1 /* StarshipHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */; };
-		0E8714D12657BD8200327BD1 /* MXScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */; };
-		0EBD4A6C265A0C3200798655 /* MXFalconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */; };
-		0EBD4A6E265A0CEF00798655 /* MXWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */; };
+		0E8714D12657BD8200327BD1 /* HPScrollViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */; };
+		0EBD4A6C265A0C3200798655 /* HPFalconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */; };
+		0EBD4A6E265A0CEF00798655 /* HPWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */; };
 		3046F83DA72E20F5285F56B7 /* Pods_HPParallaxHeader_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0AD6A27F03E2F5768320095 /* Pods_HPParallaxHeader_Example.framework */; };
 		54340CAAD83E77CA444DA693 /* Pods_HPParallaxHeader_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693FA2B4E17A92C1B32B5739 /* Pods_HPParallaxHeader_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +42,11 @@
 		0E4FEA482662828400EFDF0F /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		0E4FEA4A266283C900EFDF0F /* UIView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		0E4FEA4C2662863100EFDF0F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		0E7234082665F5A900134D4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarshipHeader.xib; sourceTree = "<group>"; };
-		0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXScrollViewExample.swift; sourceTree = "<group>"; };
-		0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXFalconViewController.swift; sourceTree = "<group>"; };
-		0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXWebViewController.swift; sourceTree = "<group>"; };
+		0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPScrollViewExample.swift; sourceTree = "<group>"; };
+		0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPFalconViewController.swift; sourceTree = "<group>"; };
+		0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPWebViewController.swift; sourceTree = "<group>"; };
 		358ADADFEC650AAB3B0D1EEE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		43E192DCC80B3DB314273F2D /* Pods-HPParallaxHeader_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HPParallaxHeader_Example.release.xcconfig"; path = "Target Support Files/Pods-HPParallaxHeader_Example/Pods-HPParallaxHeader_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* HPParallaxHeader_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HPParallaxHeader_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +55,6 @@
 		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* HPParallaxHeader_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPParallaxHeader_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -123,17 +123,17 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				0E4687052658F3A700804379 /* UIScrollViewExample.swift */,
-				0E8714D02657BD8200327BD1 /* MXScrollViewExample.swift */,
-				0EBD4A6B265A0C3200798655 /* MXFalconViewController.swift */,
-				0EBD4A6D265A0CEF00798655 /* MXWebViewController.swift */,
+				0E8714D02657BD8200327BD1 /* HPScrollViewExample.swift */,
+				0EBD4A6B265A0C3200798655 /* HPFalconViewController.swift */,
+				0EBD4A6D265A0CEF00798655 /* HPWebViewController.swift */,
 				0E4FEA462662821000EFDF0F /* ParchmentExampleViewController.swift */,
 				0E4FEA4C2662863100EFDF0F /* TableViewController.swift */,
 				0E4FEA482662828400EFDF0F /* ContentViewController.swift */,
 				0E4FEA4A266283C900EFDF0F /* UIView+constraints.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				0E7234072665F5A900134D4E /* LaunchScreen.storyboard */,
 				0E8714CE2657BD5800327BD1 /* StarshipHeader.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for HPParallaxHeader";
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				0E7234092665F5A900134D4E /* LaunchScreen.storyboard in Resources */,
 				0E8714CF2657BD5800327BD1 /* StarshipHeader.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -362,14 +362,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4FEA492662828400EFDF0F /* ContentViewController.swift in Sources */,
-				0EBD4A6E265A0CEF00798655 /* MXWebViewController.swift in Sources */,
+				0E8422A3266D01BB0010994A /* UIView+constraints.swift in Sources */,
+				0EBD4A6E265A0CEF00798655 /* HPWebViewController.swift in Sources */,
 				0E46870B26591CFE00804379 /* UIScrollViewExample.swift in Sources */,
-				0E4FEA4D2662863100EFDF0F /* TableViewController.swift in Sources */,
-				0EBD4A6C265A0C3200798655 /* MXFalconViewController.swift in Sources */,
+				0EBD4A6C265A0C3200798655 /* HPFalconViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				0E8714D12657BD8200327BD1 /* MXScrollViewExample.swift in Sources */,
+				0E8714D12657BD8200327BD1 /* HPScrollViewExample.swift in Sources */,
 				0E4FEA472662821000EFDF0F /* ParchmentExampleViewController.swift in Sources */,
-				0E4FEA4B266283C900EFDF0F /* UIView+constraints.swift in Sources */,
+				0E4FEA4D2662863100EFDF0F /* TableViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,20 +393,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0E7234072665F5A900134D4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E7234082665F5A900134D4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				607FACDA1AFB9204008FA782 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -457,11 +457,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -503,10 +504,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -560,7 +562,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HPParallaxHeader_Example.app/HPParallaxHeader_Example";
 			};
 			name = Debug;
@@ -578,7 +580,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HPParallaxHeader_Example.app/HPParallaxHeader_Example";
 			};
 			name = Release;

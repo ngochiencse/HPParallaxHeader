@@ -1,0 +1,23 @@
+PODS:
+  - HPParallaxHeader (1.1.5)
+  - Parchment (3.0.1)
+
+DEPENDENCIES:
+  - HPParallaxHeader (from `../`)
+  - Parchment
+
+SPEC REPOS:
+  trunk:
+    - Parchment
+
+EXTERNAL SOURCES:
+  HPParallaxHeader:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HPParallaxHeader: e8985fe9c1e803f48b329a97381b17e5ee5dae1e
+  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
+
+PODFILE CHECKSUM: 09f6b185578daa5f25269ac79df6e5301a0c43b7
+
+COCOAPODS: 1.10.0
