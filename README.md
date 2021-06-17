@@ -2,7 +2,7 @@
 
 [![Travis (.com)](https://img.shields.io/travis/com/ngochiencse/HPParallaxHeader)](https://www.travis-ci.com/github/ngochiencse/HPParallaxHeader)
 [![Version](https://img.shields.io/cocoapods/v/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
-![Swift 5.0](https://img.shields.io/badge/swift-5.0-orange)
+[![Swift 5.4](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fngochiencse%2FHPParallaxHeader%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/ngochiencse/HPParallaxHeader)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
 [![Cocoapods platforms](https://img.shields.io/cocoapods/p/HPParallaxHeader)](http://cocoapods.org/pods/HPParallaxHeader)
