@@ -51,7 +51,7 @@ You can use  [Swift Package Manager](https://swift.org/package-manager/)  direct
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ngochiencse/HPParallaxHeader", .upToNextMajor(from: "1.1.4"))
+    .package(url: "https://github.com/ngochiencse/HPParallaxHeader", .upToNextMajor(from: "1.1.6"))
 ]
 ```
 
