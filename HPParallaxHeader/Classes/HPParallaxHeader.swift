@@ -219,13 +219,13 @@ open class HPParallaxHeader: NSObject {
         view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        view?.heightAnchor.constraint(equalTo: contentView.heightAnchor).isActive = true
+        view?.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
     func setBottomModeConstraints() {
         view?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         view?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        view?.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        view?.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         view?.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 

@@ -218,17 +218,6 @@ extension HPScrollView {
     }
 }
 
-
-//@implementation MXScrollViewDelegateForwarder
-//
-//- (BOOL)respondsToSelector:(SEL)selector {
-//    return [self.delegate respondsToSelector:selector] || [super respondsToSelector:selector];
-//}
-//
-//- (void)forwardInvocation:(NSInvocation *)invocation {
-//    [invocation invokeWithTarget:self.delegate];
-//}
-
 // MARK: - <UIScrollViewDelegate>
 extension HPScrollView: UIScrollViewDelegate {
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
