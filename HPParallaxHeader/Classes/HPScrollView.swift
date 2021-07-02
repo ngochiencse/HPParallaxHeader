@@ -47,6 +47,7 @@ open class HPScrollView : UIScrollView {
     private var observedViews: [UIScrollView] = []
     private var isObserving: Bool = true
     private var lock: Bool = false
+    private var isScrollingToTop: Bool = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,6 +81,7 @@ extension HPScrollView: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                                   shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if (otherGestureRecognizer.view == self) {
+            isScrollingToTop = false
             return false
         }
         
@@ -169,7 +171,7 @@ extension HPScrollView {
         if scrollView == self {
             
             //Adjust self scroll offset when scroll down
-            if (diff > 0 && lock) {
+            if (diff > 0 && lock && isScrollingToTop == false) {
                 self.scrollView(self, setContentOffset: old)
             } else if contentOffset.y < -contentInset.top && !bounces {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
@@ -178,8 +180,12 @@ extension HPScrollView {
                 self.scrollView(self, setContentOffset: CGPoint(x: contentOffset.x,
                                                                 y: -parallaxHeader.minimumHeight))
             }
-
-        } else {            
+            
+            // Check and update isScrollingToTop
+            if contentOffset.y <= -parallaxHeader.height {
+                isScrollingToTop = false
+            }
+        } else {
             //Adjust the observed scrollview's content offset
             lock = (scrollView.contentOffset.y > -scrollView.contentInset.top)
             
@@ -195,7 +201,14 @@ extension HPScrollView {
             }
         }
     }
-
+    
+    /**
+     Scroll to top manually which show parallax header totally
+     */
+    open func hpScrollsToTop(animated: Bool) {
+        isScrollingToTop = true
+        setContentOffset(CGPoint(x: 0, y: -parallaxHeader.height), animated: animated)
+    }
 }
 
 // MARK: - Scrolling views handlers
@@ -217,6 +230,17 @@ extension HPScrollView {
         isObserving = true
     }
 }
+
+
+//@implementation MXScrollViewDelegateForwarder
+//
+//- (BOOL)respondsToSelector:(SEL)selector {
+//    return [self.delegate respondsToSelector:selector] || [super respondsToSelector:selector];
+//}
+//
+//- (void)forwardInvocation:(NSInvocation *)invocation {
+//    [invocation invokeWithTarget:self.delegate];
+//}
 
 // MARK: - <UIScrollViewDelegate>
 extension HPScrollView: UIScrollViewDelegate {

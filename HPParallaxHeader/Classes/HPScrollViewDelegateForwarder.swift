@@ -71,7 +71,11 @@ import UIKit
     }
     
     @objc func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-        return delegate?.scrollViewShouldScrollToTop?(scrollView) ?? scrollView.scrollsToTop
+        let isScrollToTop = delegate?.scrollViewShouldScrollToTop?(scrollView) ?? scrollView.scrollsToTop
+        if isScrollToTop == true {
+            self.scrollView.hpScrollsToTop(animated: true)
+        }
+        return false
     }
     
     @objc func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
