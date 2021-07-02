@@ -71,7 +71,7 @@ Documentation is available through [CocoaDocs](http://cocoadocs.org/docsets/HPPa
 
 [Hien Pham](https://github.com/ngochiencse)
 
-![Twitter URL](https://img.shields.io/twitter/url?label=Hien%20Pham&url=https%3A%2F%2Ftwitter.com%2Fngochien91)
+![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fngochien91)
 
 ## License
 
