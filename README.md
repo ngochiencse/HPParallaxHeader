@@ -41,8 +41,6 @@ scrollView.parallaxHeader.minimumHeight = 20
 
 + The HPScrollViewController is a container with a child view controller that can be added programmatically or using the custom segue HPScrollViewControllerSegue.
 
-+ Please check examples for **Swift** implementations.
-
 ## Installation
 
 ### Swift Package Manager 
