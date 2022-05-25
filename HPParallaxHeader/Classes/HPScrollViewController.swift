@@ -118,7 +118,7 @@ open class HPScrollViewController: UIViewController {
     weak var childHeightConstraint: NSLayoutConstraint?
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -147,7 +147,7 @@ open class HPScrollViewController: UIViewController {
         }
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if #available(iOS 11.0, *) {
@@ -160,7 +160,7 @@ open class HPScrollViewController: UIViewController {
     }
 
     @available(iOS 11.0, *)
-    public override func viewSafeAreaInsetsDidChange() {
+    open override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         
         if scrollView.contentInsetAdjustmentBehavior != .never {
@@ -214,8 +214,8 @@ public extension UIViewController {
 /**
  The MXParallaxHeaderSegue class creates a segue object to get the parallax header view controller from storyboard.
  */
-public class HPParallaxHeaderSegue : UIStoryboardSegue {
-    public override func perform() {
+open class HPParallaxHeaderSegue : UIStoryboardSegue {
+    open override func perform() {
         if let svc = source as? HPScrollViewController {
             svc.headerViewController = destination
         }
@@ -225,8 +225,8 @@ public class HPParallaxHeaderSegue : UIStoryboardSegue {
 /**
  The MXScrollViewControllerSegue class creates a segue object to get the child view controller from storyboard.
  */
-public class HPScrollViewControllerSegue : UIStoryboardSegue {
-    public override func perform() {
+open class HPScrollViewControllerSegue : UIStoryboardSegue {
+    open override func perform() {
         if let svc = source as? HPScrollViewController {
             svc.childViewController = destination
         }
