@@ -48,10 +48,6 @@ class HPScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: - Scroll view delegate
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("progress \(scrollView.parallaxHeader.progress)")
-    }
-    
     func parallaxHeaderDidScroll(_ parallaxHeader: HPParallaxHeader) {
         print("progress \(parallaxHeader.progress)")
     }
