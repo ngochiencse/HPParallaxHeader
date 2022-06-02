@@ -9,7 +9,7 @@
 import UIKit
 import HPParallaxHeader
 
-class HPScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HPScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDataSource, HPParallaxHeaderDelegate {
 
     fileprivate var SpanichWhite : UIColor = #colorLiteral(red: 0.9960784314, green: 0.9921568627, blue: 0.9411764706, alpha: 1) // #FEFDF0
     
@@ -24,6 +24,7 @@ class HPScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
         scrollView.parallaxHeader.load(nibName: "StarshipHeader", bundle: nil, options: [:]) // You can set the parallax header view from a nib.
         scrollView.parallaxHeader.height = 300
         scrollView.parallaxHeader.mode = .fill
+        scrollView.parallaxHeader.delegate = self
 
         table1.backgroundColor = SpanichWhite
         table1.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -49,5 +50,9 @@ class HPScrollViewExample: UIViewController, UITableViewDelegate, UITableViewDat
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print("progress \(scrollView.parallaxHeader.progress)")
+    }
+    
+    func parallaxHeaderDidScroll(_ parallaxHeader: HPParallaxHeader) {
+        print("progress \(parallaxHeader.progress)")
     }
 }

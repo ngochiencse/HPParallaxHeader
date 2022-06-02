@@ -24,6 +24,7 @@ class HPFalconViewController: UIViewController, HPParallaxHeaderDelegate {
     func parallaxHeaderDidScroll(_ parallaxHeader: HPParallaxHeader) {
         let angle = parallaxHeader.progress * CGFloat(Double.pi) * 2
         self.falcon.transform = CGAffineTransform.identity.rotated(by: angle)
+        print("progress \(parallaxHeader.progress)")
     }
 
 }

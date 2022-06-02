@@ -253,7 +253,7 @@ open class HPParallaxHeader: NSObject {
         contentView.layoutSubviews()
         
         let div = height - minimumHeightReal
-        progress = (contentView.frame.size.height - minimumHeightReal) / (div != 0 ? div : height)
+        progress = ((heightConstraint?.constant ?? 0) - minimumHeightReal) / (div != 0 ? div : height)
     }
     
     private func adjustScrollViewTopInset(_ top: CGFloat) {
