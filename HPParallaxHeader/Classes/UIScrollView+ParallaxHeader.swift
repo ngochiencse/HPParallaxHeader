@@ -5,7 +5,6 @@
 //  Created by Hien Pham on 22/05/2021.
 //
 
-import Foundation
 import UIKit
 
 private var parallaxHeaderKey: UInt8 = 0

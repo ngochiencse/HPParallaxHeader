@@ -5,7 +5,6 @@
 //  Created by Hien Pham on 19/05/2021.
 //
 
-import Foundation
 import UIKit
 
 class HPParallaxView: UIView {

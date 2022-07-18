@@ -5,7 +5,6 @@
 //  Created by Hien Pham on 06/03/2021.
 //
 
-import Foundation
 import UIKit
 
 public enum HPParallaxHeaderMode {
