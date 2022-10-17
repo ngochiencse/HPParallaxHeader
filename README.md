@@ -63,7 +63,7 @@ pod "HPParallaxHeader"
 
 ## Documentation
 
-Documentation is available through [CocoaDocs](http://cocoadocs.org/docsets/HPParallaxHeader/).
+Documentation is available through [CocoaDocs](https://ngochiencse.github.io/HPParallaxHeader/documentation/hpparallaxheader).
 
 ## Author
 
