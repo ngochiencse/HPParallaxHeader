@@ -5,9 +5,10 @@
 //  Created by Hien Pham on 06/03/2021.
 //
 
+import Foundation
 import UIKit
 
-public enum HPParallaxHeaderMode {
+@objc public enum HPParallaxHeaderMode: Int {
     /**
      The option to scale the content to fill the size of the header. Some portion of the content may be clipped to fill the header’s bounds.
      */
@@ -118,7 +119,7 @@ open class HPParallaxHeader: NSObject {
     /**
      The parallax header behavior mode.
      */
-    public var mode: HPParallaxHeaderMode = .fill {
+    @objc public var mode: HPParallaxHeaderMode = .fill {
         didSet {
             if (mode != oldValue) {
                 updateConstraints()
@@ -279,4 +280,3 @@ open class HPParallaxHeader: NSObject {
         }
     }
 }
-
